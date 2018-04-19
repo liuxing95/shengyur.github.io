@@ -2,4 +2,4 @@
 博客最装X的一句话来自王家卫————《一代宗师》
 
 
-![](https://raw.githubusercontent.com/shengyur/shengyur.github.io/master/img/zhang.jpg)
+![](https://raw.githubusercontent.com/shengyur/shengyur.github.io/master/img/zhang.jpg){:height="50%" width="50%"}
