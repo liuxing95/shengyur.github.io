@@ -3,6 +3,15 @@
   
     
     <entry>
+      <title>前端自动化测试探索</title>
+      <link href="/2018/04/24/JavaScript-test-framework/"/>
+      <url>/2018/04/24/JavaScript-test-framework/</url>
+      <content type="html"><![CDATA[<h3 id="前端测试工具一览"><a href="#前端测试工具一览" class="headerlink" title="前端测试工具一览"></a>前端测试工具一览</h3><p>前端测试工具也和前端的框架一样纷繁复杂，其中常见的测试工具，大致可分为<strong>测试框架</strong>、<strong>断言库</strong>、<strong>测试覆盖率工具</strong>等几类。在正式开始本文之前，我们先来大致了解下它们：</p><h3 id="测试框架"><a href="#测试框架" class="headerlink" title="测试框架"></a>测试框架</h3><p>测试框架的作用是提供一些方便的语法来描述测试用例，以及对用例进行分组。</p><p>测试框架可分为两种： TDD （测试驱动开发）和 BDD （行为驱动开发），我理解两者间的区别主要是一些语法上的不同，其中 BDD 提供了提供了可读性更好的用例语法，至于详细的区别可参见 <a href="https://joshldavis.com/2013/05/27/difference-between-tdd-and-bdd/" target="_blank" rel="noopener">The Difference Between TDD and BDD</a> 一文。</p><p>常见的测试框架有 <a href="https://jasmine.github.io/" target="_blank" rel="noopener">Jasmine</a>, <a href="https://mochajs.org/" target="_blank" rel="noopener">Mocha</a>,以及本文要介绍的 <a href="https://facebook.github.io/jest/zh-Hans/" target="_blank" rel="noopener">Jest</a> 。</p><h3 id="断言库"><a href="#断言库" class="headerlink" title="断言库"></a>断言库</h3><p>断言库主要提供语义化方法，用于对参与测试的值做各种各样的判断。这些语义化方法会返回测试的结果，要么成功、要么失败。常见的断言库有 <a href="https://shouldjs.github.io/" target="_blank" rel="noopener">Should.js</a>, <a href="http://www.chaijs.com/" target="_blank" rel="noopener">Chai.js</a> 等。</p><h3 id="测试覆盖率工具"><a href="#测试覆盖率工具" class="headerlink" title="测试覆盖率工具"></a>测试覆盖率工具</h3><p>用于统计测试用例对代码的测试情况，生成相应的报表，比如 <a href="https://github.com/gotwarlost/istanbul" target="_blank" rel="noopener">istanbul</a>。</p><p>参考：</p><ul><li><a href="https://segmentfault.com/a/1190000004558796" target="_blank" rel="noopener">https://segmentfault.com/a/1190000004558796</a></li><li><a href="https://zhuanlan.zhihu.com/p/28162082" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/28162082</a></li></ul>]]></content>
+      
+      
+    </entry>
+    
+    <entry>
       <title>github+hexo+Maupassant 搭建个人博客教程</title>
       <link href="/2018/04/18/hexo+github+Maupassant%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
       <url>/2018/04/18/hexo+github+Maupassant%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
