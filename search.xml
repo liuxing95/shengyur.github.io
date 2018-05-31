@@ -6,7 +6,7 @@
       <title>vscode 之多设备配置同步</title>
       <link href="/2018/06/01/vscode%E4%B9%8B%E5%A4%9A%E8%AE%BE%E5%A4%87%E9%85%8D%E7%BD%AE%E5%90%8C%E6%AD%A5/"/>
       <url>/2018/06/01/vscode%E4%B9%8B%E5%A4%9A%E8%AE%BE%E5%A4%87%E9%85%8D%E7%BD%AE%E5%90%8C%E6%AD%A5/</url>
-      <content type="html"><![CDATA[<h4 id="背景："><a href="#背景：" class="headerlink" title="背景："></a>背景：</h4><p>多台电脑同时使用的情况下，每次换电脑都重新配置一次就太麻烦了。得同步一把啊~</p><h4 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h4><p>实际上，Atom 和 VSC 都提供了 Sync 插件，比如 VSC 的 Settings Sync，可以轻松将 IDE 的所有配置一键备份到 github 上，也可以将 github 上的配置一键拉取下来，然后重启 IDE 便可以共享同样的配置了。<br><a id="more"></a></p><p>这个配置并不复杂，下面来简单介绍下它的使用：</p><ul><li>在左侧的 sidebar 选中最后一个，搜索 Sync，不出意外，你会从前几个中找到下载量很高的那个 Settings Sync；</li><li>安装后，摁下 Command + Shift + P 打开控制面板，搜索 Sync，选择 update/upload 可以上传你的配置，选择 Download 会下载远程配置；</li><li>如果你之前没有使用过 Sync，在上传配置的时候，会让你在 Github 上创建一个授权码，允许 IDE 在你的 gist 中创建资源；下载远程配置，你可以直接将 gist 的 id 填入；</li><li>下载后等待安装，然后重启即可</li></ul><p>顺便纪念下2018儿童节的第一分钟。<br>原文：<br><a href="https://www.barretlee.com/blog/2017/04/21/something-about-vsc/" target="_blank" rel="noopener">https://www.barretlee.com/blog/2017/04/21/something-about-vsc/</a></p>]]></content>
+      <content type="html"><![CDATA[<h4 id="背景："><a href="#背景：" class="headerlink" title="背景："></a>背景：</h4><p>多台电脑同时使用的情况下，每次换电脑都重新配置一次就太麻烦了。得同步一把啊~</p><h4 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h4><p>实际上，Atom 和 VSC 都提供了 Sync 插件，比如 VSC 的 Settings Sync，可以轻松将 IDE 的所有配置一键备份到 github 上，也可以将 github 上的配置一键拉取下来，然后重启 IDE 便可以共享同样的配置了。<br><a id="more"></a></p><p>这个配置并不复杂，下面来简单介绍下它的使用：</p><ul><li>在左侧的 sidebar 选中最后一个，搜索 Sync，不出意外，你会从前几个中找到下载量很高的那个 Settings Sync；</li><li>安装后，摁下 Command + Shift + P 打开控制面板，搜索 Sync，选择 update/upload 可以上传你的配置，选择 Download 会下载远程配置；</li><li>如果你之前没有使用过 Sync，在上传配置的时候，会让你在 Github 上创建一个授权码，允许 IDE 在你的 gist 中创建资源；下载远程配置，你可以直接将 gist 的 id 填入；</li><li>下载后等待安装，然后重启即可</li></ul><p>顺便纪念下2018儿童节的第一分钟。<br><img src="https://raw.githubusercontent.com/shengyur/shengyur.github.io/master/img/lufi.jpg" alt=""><br>原文：<br><a href="https://www.barretlee.com/blog/2017/04/21/something-about-vsc/" target="_blank" rel="noopener">https://www.barretlee.com/blog/2017/04/21/something-about-vsc/</a></p>]]></content>
       
       <categories>
           
@@ -257,9 +257,9 @@
       
         <tags>
             
-            <tag> Less </tag>
-            
             <tag> vscode </tag>
+            
+            <tag> Less </tag>
             
         </tags>
       
