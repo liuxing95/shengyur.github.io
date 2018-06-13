@@ -27,13 +27,11 @@
       <title>React-Element中的StyleSheet.reset方法为何可以重置样式？</title>
       <link href="/2018/06/13/React-Element%E4%B8%AD%E7%9A%84StyleSheet.reset%E6%96%B9%E6%B3%95%E4%B8%BA%E4%BD%95%E5%8F%AF%E4%BB%A5%E9%87%8D%E7%BD%AE%E6%A0%B7%E5%BC%8F%EF%BC%9F/"/>
       <url>/2018/06/13/React-Element%E4%B8%AD%E7%9A%84StyleSheet.reset%E6%96%B9%E6%B3%95%E4%B8%BA%E4%BD%95%E5%8F%AF%E4%BB%A5%E9%87%8D%E7%BD%AE%E6%A0%B7%E5%BC%8F%EF%BC%9F/</url>
-      <content type="html"><![CDATA[]]></content>
+      <content type="html"><![CDATA[<p>在React-Element的Select组件中，一上来就来了行看不懂的代码，<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">StyleSheet</span><span class="selector-class">.reset</span>(`</span><br><span class="line">  <span class="selector-class">.ishow-select-dropdown</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute <span class="meta">!important</span>;</span><br><span class="line">  &#125;</span><br><span class="line">`)</span><br></pre></td></tr></table></figure></p><p>发现该方法可以实现，在当前页面插入带着样式的style标签，来实现对css的覆盖，心生疑虑，这到底是react的API还是es7黑魔法？</p><p>而后发现 Style只是从外部引入的一个模块，代码 动态添加了style节点</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">exports.reset = <span class="function"><span class="params">css</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> style = <span class="built_in">document</span>.createElement(<span class="string">'style'</span>); <span class="comment">//通过指定名称创建一个style元素</span></span><br><span class="line"></span><br><span class="line">  style.type = <span class="string">'text/css'</span>;</span><br><span class="line">  <span class="comment">//1.必需的 type 属性规定样式表的 MIME 类型。  2.type 属性指示 &lt;style&gt; 与 &lt;/style&gt; 标签之间的内容。 3.值 "text/css" 指示内容是标准的 CSS。</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (style.styleSheet)&#123;</span><br><span class="line">    style.styleSheet.cssText = css;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    style.appendChild(<span class="built_in">document</span>.createTextNode(css));</span><br><span class="line">  &#125;</span><br><span class="line">«»</span><br><span class="line">  (<span class="built_in">document</span>.head || <span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>]).appendChild(style);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>被这波原生js操作晃瞎了眼呀~只好再复习下原生用法</p><ul><li><a href="http://www.w3school.com.cn/tags/att_style_type.asp" target="_blank" rel="noopener">style 标签的 type 属性</a></li></ul>]]></content>
       
       <categories>
           
-          <category> 前端基础 </category>
-          
-          <category> 库/框架 </category>
+          <category> 十万个为什么 </category>
           
       </categories>
       
@@ -41,6 +39,8 @@
         <tags>
             
             <tag> Javascript </tag>
+            
+            <tag> React </tag>
             
         </tags>
       
@@ -316,6 +316,21 @@
     </entry>
     
     <entry>
+      <title>node版本切换工具的常用命令</title>
+      <link href="/2018/05/05/node%E7%89%88%E6%9C%AC%E5%88%87%E6%8D%A2%E5%B7%A5%E5%85%B7nvm%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+      <url>/2018/05/05/node%E7%89%88%E6%9C%AC%E5%88%87%E6%8D%A2%E5%B7%A5%E5%85%B7nvm%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+      <content type="html"><![CDATA[<p>使用场景：同时处理几个项目时，依赖的node版本不同，使用nvm工具，可以实现快速切换。</p><ul><li>nvm install <version>  ## 安装指定版本，可模糊安装，如：安装v4.4.0，既可nvm install v4.4.0，又可nvm install 4.4</version></li><li>nvm uninstall <version>  ## 删除已安装的指定版本，语法与install类似</version></li><li>nvm use <version>  ## 切换使用指定的版本node</version></li><li>nvm ls  ## 列出所有安装的版本</li><li>nvm ls-remote  ## 列出所以远程服务器的版本（官方node version list）</li><li>nvm current  ## 显示当前的版本</li><li>nvm alias <name> <version>  ## 给不同的版本号添加别名</version></name></li><li>nvm unalias <name>  ## 删除已定义的别名</name></li><li>nvm reinstall-packages <version>  ## 在当前版本node环境下，重新全局安装指定版本号的npm包</version></li></ul>]]></content>
+      
+      <categories>
+          
+          <category> 效率工具 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>less配合vscode使用的配置</title>
       <link href="/2018/05/05/less%E9%85%8D%E5%90%88vscode%E4%BD%BF%E7%94%A8%E7%9A%84%E9%85%8D%E7%BD%AE/"/>
       <url>/2018/05/05/less%E9%85%8D%E5%90%88vscode%E4%BD%BF%E7%94%A8%E7%9A%84%E9%85%8D%E7%BD%AE/</url>
@@ -335,21 +350,6 @@
             <tag> vscode </tag>
             
         </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>node版本切换工具的常用命令</title>
-      <link href="/2018/05/05/node%E7%89%88%E6%9C%AC%E5%88%87%E6%8D%A2%E5%B7%A5%E5%85%B7nvm%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-      <url>/2018/05/05/node%E7%89%88%E6%9C%AC%E5%88%87%E6%8D%A2%E5%B7%A5%E5%85%B7nvm%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-      <content type="html"><![CDATA[<p>使用场景：同时处理几个项目时，依赖的node版本不同，使用nvm工具，可以实现快速切换。</p><ul><li>nvm install <version>  ## 安装指定版本，可模糊安装，如：安装v4.4.0，既可nvm install v4.4.0，又可nvm install 4.4</version></li><li>nvm uninstall <version>  ## 删除已安装的指定版本，语法与install类似</version></li><li>nvm use <version>  ## 切换使用指定的版本node</version></li><li>nvm ls  ## 列出所有安装的版本</li><li>nvm ls-remote  ## 列出所以远程服务器的版本（官方node version list）</li><li>nvm current  ## 显示当前的版本</li><li>nvm alias <name> <version>  ## 给不同的版本号添加别名</version></name></li><li>nvm unalias <name>  ## 删除已定义的别名</name></li><li>nvm reinstall-packages <version>  ## 在当前版本node环境下，重新全局安装指定版本号的npm包</version></li></ul>]]></content>
-      
-      <categories>
-          
-          <category> 效率工具 </category>
-          
-      </categories>
-      
       
     </entry>
     
