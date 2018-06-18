@@ -3,10 +3,25 @@
   
     
     <entry>
-      <title>利用hexo在多台电脑上提交和更新github pages博客</title>
-      <link href="/2018/06/16/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E9%83%A8%E7%BD%B2%E4%BC%98%E5%8C%96%E4%B8%8E%E7%AE%A1%E7%90%86/"/>
-      <url>/2018/06/16/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E9%83%A8%E7%BD%B2%E4%BC%98%E5%8C%96%E4%B8%8E%E7%AE%A1%E7%90%86/</url>
-      <content type="html"><![CDATA[<h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>Hexo部署到GitHub上的文件，是本地的.md文件编译生成的html文件（静态网页）。因此，当你重装电脑或者想在不同电脑上修改博客时，没有编译之前的母本文件，操作就很麻烦了。</p><p>其实，Hexo生成的网站文件中有.gitignore文件，因此它的本意也是想我们将Hexo生成的网站文件存放到GitHub上进行管理的（而不是用U盘或者云备份）。这样，不仅解决了上述的问题，还可以通过git的版本控制追踪你的博文的修改过程，操作简单，效率更高。</p><p>但是，如果每一个GitHub Pages都需要创建一个额外的仓库来存放Hexo网站文件，就会多出许多不必要的仓库（10个项目需要20个仓库）。所以，本文选择利用分支。</p><p>简单地说，每个想建立GitHub Pages的仓库，起码有两个分支，一个用来存放Hexo网站的文件，一个用来发布网站。</p><p>下面以我的博客作为例子详细地讲述。</p><h4 id="搭建流程"><a href="#搭建流程" class="headerlink" title="搭建流程"></a>搭建流程</h4><p>1 . 创建仓库，shengyur.github.io；</p><p>2 . 创建两个分支：master 与 hexo；</p><p>3 . 设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件）；</p><p>4 . 使用git clone xxx.github.io.git拷贝仓库；</p><p>5 . 在本地xxx.github.io文件夹下通过Git bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo）;</p><p>6 . 修改_config.yml中的deploy参数，分支应为master；</p><p>7 . 依次执行git add .、git commit -m “…”、git push origin hexo提交网站相关的文件；</p><p>8 . 执行hexo generate -d生成网站并部署到GitHub上。</p><p>这样一来，在GitHub上的xxx.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。多端登陆修改博客就可以实现了~</p><p>参考：</p><ol><li><a href="https://www.jianshu.com/p/0b1fccce74e0" target="_blank" rel="noopener">https://www.jianshu.com/p/0b1fccce74e0</a></li><li><a href="https://formulahendry.github.io/2016/12/04/hexo-ci/" target="_blank" rel="noopener">https://formulahendry.github.io/2016/12/04/hexo-ci/</a></li><li><a href="http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more" target="_blank" rel="noopener">http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more</a></li></ol>]]></content>
+      <title>说大人，则渺之。</title>
+      <link href="/2018/06/18/%E8%AF%B4%E5%A4%A7%E4%BA%BA%EF%BC%8C%E5%88%99%E6%B8%BA%E4%B9%8B%E3%80%82/"/>
+      <url>/2018/06/18/%E8%AF%B4%E5%A4%A7%E4%BA%BA%EF%BC%8C%E5%88%99%E6%B8%BA%E4%B9%8B%E3%80%82/</url>
+      <content type="html"><![CDATA[<p>孟子曰：说①大人，则藐之，勿视其巍巍然。堂高数仞，榱题②数尺，我得志，弗为也。食前方丈，侍妾数百人，我得志，弗为也。般乐饮酒，驱骋田猎，后车千乘，我得志，弗为也。在彼者，皆我所不为也；在我者，皆古之制也。吾何畏彼哉？”</p><a id="more"></a><p>①说（Shui）：向……进言。<br>②榱（cuī）题：也叫“出檐”，指屋檐的前端。</p>]]></content>
+      
+      <categories>
+          
+          <category> 子曾经曰过 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
+      <title>Hexo的版本控制与持续集成</title>
+      <link href="/2018/06/17/Hexo%E7%9A%84%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/"/>
+      <url>/2018/06/17/Hexo%E7%9A%84%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/</url>
+      <content type="html"><![CDATA[<p>上一篇文章 <a href="https://shengyur.github.io/2018/06/16/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E9%83%A8%E7%BD%B2%E4%BC%98%E5%8C%96%E4%B8%8E%E7%AE%A1%E7%90%86/" target="_blank" rel="noopener">利用hexo在多台电脑上提交和更新github pages博客</a>中，我们学习了如何利用hexo在多台电脑上提交和更新博客内容，那么每次在本地更新完博客后，需要执行两部操作，提交好源文件后，再hexo d进行发布，是不是很麻烦？？换了电脑之后又要重新搭建环境，是不是很蛋疼？？</p><p>那么接下来我们就来说说如何优雅愉快地对我们的Hexo进行版本管理和发布。<br><a id="more"></a></p><p>既然我们已经用了GitHub来托管我们生成出来的静态网站，那么为什么不也把Hexo博客的源文件也host在GitHub上呢。那么问题来了，如果我们把Hexo博客的源文件托管在GitHub上，我们的发布流程就会变为：</p><ol><li>执行git push把更新的源文件push到托管源文件的GitHub Repo (我们称之为Source Repo)</li><li>执行hexo deploy来更新托管静态网站的GitHub Pages (我们称之为Content Repo)</li></ol><p>这样看来，每次更新博客要经历两个步骤，并不是那么straightforward。<strong>那么有没有办法做到既能使用GitHub进行版本控制，又能做到一键发布呢？</strong></p><p>答案是肯定的。这里用到了 <a href="https://en.wikipedia.org/wiki/Continuous_integration" target="_blank" rel="noopener"><strong>持续集成</strong></a> 也就是我们一直所说的CI来完成一键发布：<br>当有新的change push到Source Repo时，自动执行CI脚本，生成最新的静态网站发布到Content Repo，一气呵成。</p><p>那么我使用什么CI工具来做呢？我们可以使用像Travis CI这样的Hosted CI Service，也可以使用Jenkins或者TeamCity来搭建CI server。<br>如果自己来搭建CI Server，费时费力，又要花钱来买Server来host CI service，肯定不是一个很好的选择。那么我们选哪个Hosted CI Service呢？</p><p>经过对比，发现使用<a href="https://www.appveyor.com/" target="_blank" rel="noopener">AppVeyor</a>来建立CI非常方便，主要是以下步骤：</p><ol><li><p>注册并登陆AppVeyor<br>访问<a href="https://formulahendry.github.io/assets/img/hexo-ci/appveyor-login.png" target="_blank" rel="noopener">AppVeyor</a>登陆页面，使用你的GitHub账号登陆即可。</p></li><li><p>添加Project</p></li><li><p>添加appveyor.yml到Source Repo</p></li></ol><p>参考：</p><ul><li><a href="http://www.ruanyifeng.com/blog/2017/12/travis_ci_tutorial.html" target="_blank" rel="noopener">阮一峰 Travis CI教程</a></li><li><a href="https://formulahendry.github.io/2016/12/04/hexo-ci/" target="_blank" rel="noopener"> Hexo的版本控制与持续集成 </a></li></ul>]]></content>
       
       <categories>
           
@@ -24,21 +39,21 @@
     </entry>
     
     <entry>
-      <title>axios常用攻略</title>
-      <link href="/2018/06/14/axios%E5%B8%B8%E7%94%A8%E6%94%BB%E7%95%A5/"/>
-      <url>/2018/06/14/axios%E5%B8%B8%E7%94%A8%E6%94%BB%E7%95%A5/</url>
-      <content type="html"><![CDATA[<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>npm install axios</p><p><strong>axios 依赖本机要支持ES6 Promise实现。 如果您的环境不支持ES6 Promises，您可以使用polyfill。</strong></p><a id="more"></a><h3 id="常见用法"><a href="#常见用法" class="headerlink" title="常见用法"></a>常见用法</h3><ol><li>执行get请求</li></ol><figure class="highlight scilab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 向具有指定ID的用户发出请求</span></span><br><span class="line">axios.get(<span class="string">'/user?ID=12345'</span>)</span><br><span class="line">.<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(response)</span> &#123;</span></span><br><span class="line">    console.<span class="built_in">log</span>(response);</span><br><span class="line">&#125;)</span><br><span class="line">.<span class="keyword">catch</span>(<span class="function"><span class="keyword">function</span> <span class="params">(error)</span> &#123;</span></span><br><span class="line">    console.<span class="built_in">log</span>(<span class="built_in">error</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 也可以通过 params 对象传递参数</span></span><br><span class="line">axios.get(<span class="string">'/user'</span>, &#123;</span><br><span class="line">    params: &#123;</span><br><span class="line">    ID: <span class="number">12345</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">.<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(response)</span> &#123;</span></span><br><span class="line">    console.<span class="built_in">log</span>(response);</span><br><span class="line">&#125;)</span><br><span class="line">.<span class="keyword">catch</span>(<span class="function"><span class="keyword">function</span> <span class="params">(error)</span> &#123;</span></span><br><span class="line">    console.<span class="built_in">log</span>(<span class="built_in">error</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><ol start="2"><li>执行post请求</li></ol><figure class="highlight scilab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">axios.post(<span class="string">'/user'</span>, &#123;</span><br><span class="line">    firstName: <span class="string">'Fred'</span>,</span><br><span class="line">    lastName: <span class="string">'Flintstone'</span></span><br><span class="line">&#125;)</span><br><span class="line">.<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(response)</span> &#123;</span></span><br><span class="line">    console.<span class="built_in">log</span>(response);</span><br><span class="line">&#125;)</span><br><span class="line">.<span class="keyword">catch</span>(<span class="function"><span class="keyword">function</span> <span class="params">(error)</span> &#123;</span></span><br><span class="line">    console.<span class="built_in">log</span>(<span class="built_in">error</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><ol start="3"><li>执行多个并发请求</li></ol><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title">getUserAccount</span>() &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">axios.get('/user/12345')</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title">getUserPermissions</span>() &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">axios.get('/user/12345/permissions')</span>;</span><br><span class="line">&#125;</span><br><span class="line">axios.<span class="keyword">all</span>([getUserAccount(), getUserPermissions()])</span><br><span class="line">  .<span class="keyword">then</span>(axios.spread(<span class="keyword">function</span> <span class="title"></span>(acct, perms) &#123;</span><br><span class="line">    //两个请求现已完成</span><br><span class="line">  &#125;));</span><br></pre></td></tr></table></figure><p>更多可参考：<br><a href="https://ykloveyxk.github.io/2017/02/25/axios%E5%85%A8%E6%94%BB%E7%95%A5/" target="_blank" rel="noopener">https://ykloveyxk.github.io/2017/02/25/axios%E5%85%A8%E6%94%BB%E7%95%A5/</a></p>]]></content>
+      <title>利用hexo在多台电脑上提交和更新github pages博客</title>
+      <link href="/2018/06/16/%E5%88%A9%E7%94%A8hexo%E5%9C%A8%E5%A4%9A%E5%8F%B0%E7%94%B5%E8%84%91%E4%B8%8A%E6%8F%90%E4%BA%A4%E5%92%8C%E6%9B%B4%E6%96%B0github%20pages%E5%8D%9A%E5%AE%A2/"/>
+      <url>/2018/06/16/%E5%88%A9%E7%94%A8hexo%E5%9C%A8%E5%A4%9A%E5%8F%B0%E7%94%B5%E8%84%91%E4%B8%8A%E6%8F%90%E4%BA%A4%E5%92%8C%E6%9B%B4%E6%96%B0github%20pages%E5%8D%9A%E5%AE%A2/</url>
+      <content type="html"><![CDATA[<h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>Hexo部署到GitHub上的文件，是本地的.md文件编译生成的html文件（静态网页）。因此，当你重装电脑或者想在不同电脑上修改博客时，没有编译之前的母本文件，操作就很麻烦了。</p><p>其实，Hexo生成的网站文件中有.gitignore文件，因此它的本意也是想我们将Hexo生成的网站文件存放到GitHub上进行管理的（而不是用U盘或者云备份）。这样，不仅解决了上述的问题，还可以通过git的版本控制追踪你的博文的修改过程，操作简单，效率更高。</p><p>但是，如果每一个GitHub Pages都需要创建一个额外的仓库来存放Hexo网站文件，就会多出许多不必要的仓库（10个项目需要20个仓库）。所以，本文选择利用分支。</p><p>简单地说，每个想建立GitHub Pages的仓库，起码有两个分支，一个用来存放Hexo网站的文件，一个用来发布网站。</p><p>下面以我的博客作为例子详细地讲述。</p><h4 id="搭建流程"><a href="#搭建流程" class="headerlink" title="搭建流程"></a>搭建流程</h4><p>1 . 创建仓库，shengyur.github.io；</p><p>2 . 创建两个分支：master 与 hexo；</p><p>3 . 设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件）；</p><p>4 . 使用git clone xxx.github.io.git拷贝仓库；</p><p>5 . 在本地xxx.github.io文件夹下通过Git bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo）;</p><p>6 . 修改_config.yml中的deploy参数，分支应为master；</p><p>7 . 依次执行git add .、git commit -m “…”、git push origin hexo提交网站相关的文件；</p><p>8 . 执行hexo generate -d生成网站并部署到GitHub上。</p><p>这样一来，在GitHub上的xxx.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。多端登陆修改博客就可以实现了~</p><p>参考：</p><ol><li><a href="https://www.jianshu.com/p/0b1fccce74e0" target="_blank" rel="noopener">https://www.jianshu.com/p/0b1fccce74e0</a></li><li><a href="https://formulahendry.github.io/2016/12/04/hexo-ci/" target="_blank" rel="noopener">https://formulahendry.github.io/2016/12/04/hexo-ci/</a></li><li><a href="http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more" target="_blank" rel="noopener">http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more</a></li></ol>]]></content>
       
       <categories>
           
-          <category> 库/框架 </category>
+          <category> 效率工具 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> axios </tag>
+            <tag> Hexo </tag>
             
         </tags>
       
@@ -66,23 +81,21 @@
     </entry>
     
     <entry>
-      <title>React-Element中的StyleSheet.reset方法为何可以重置样式？</title>
-      <link href="/2018/06/13/React-Element%E4%B8%AD%E7%9A%84StyleSheet.reset%E6%96%B9%E6%B3%95%E4%B8%BA%E4%BD%95%E5%8F%AF%E4%BB%A5%E9%87%8D%E7%BD%AE%E6%A0%B7%E5%BC%8F%EF%BC%9F/"/>
-      <url>/2018/06/13/React-Element%E4%B8%AD%E7%9A%84StyleSheet.reset%E6%96%B9%E6%B3%95%E4%B8%BA%E4%BD%95%E5%8F%AF%E4%BB%A5%E9%87%8D%E7%BD%AE%E6%A0%B7%E5%BC%8F%EF%BC%9F/</url>
-      <content type="html"><![CDATA[<p>在React-Element的Select组件中，一上来就来了行看不懂的代码，<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">StyleSheet</span><span class="selector-class">.reset</span>(`</span><br><span class="line">  <span class="selector-class">.ishow-select-dropdown</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute <span class="meta">!important</span>;</span><br><span class="line">  &#125;</span><br><span class="line">`)</span><br></pre></td></tr></table></figure></p><p>发现该方法可以实现，在当前页面插入带着样式的style标签，来实现对css的覆盖，心生疑虑，这到底是react的API还是es7黑魔法？</p><p>而后发现 Style只是从外部引入的一个模块，代码 动态添加了style节点</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">exports.reset = <span class="function"><span class="params">css</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> style = <span class="built_in">document</span>.createElement(<span class="string">'style'</span>); <span class="comment">//通过指定名称创建一个style元素</span></span><br><span class="line"></span><br><span class="line">  style.type = <span class="string">'text/css'</span>;</span><br><span class="line">  <span class="comment">//1.必需的 type 属性规定样式表的 MIME 类型。  2.type 属性指示 &lt;style&gt; 与 &lt;/style&gt; 标签之间的内容。 3.值 "text/css" 指示内容是标准的 CSS。</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (style.styleSheet)&#123;</span><br><span class="line">    style.styleSheet.cssText = css;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    style.appendChild(<span class="built_in">document</span>.createTextNode(css));</span><br><span class="line">  &#125;</span><br><span class="line">«»</span><br><span class="line">  (<span class="built_in">document</span>.head || <span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>]).appendChild(style);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>被这波原生js操作晃瞎了眼呀~只好再复习下原生用法</p><ul><li><a href="http://www.w3school.com.cn/tags/att_style_type.asp" target="_blank" rel="noopener">style 标签的 type 属性</a></li></ul>]]></content>
+      <title>axios常用攻略</title>
+      <link href="/2018/06/14/axios%E5%B8%B8%E7%94%A8%E6%94%BB%E7%95%A5/"/>
+      <url>/2018/06/14/axios%E5%B8%B8%E7%94%A8%E6%94%BB%E7%95%A5/</url>
+      <content type="html"><![CDATA[<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>npm install axios</p><p><strong>axios 依赖本机要支持ES6 Promise实现。 如果您的环境不支持ES6 Promises，您可以使用polyfill。</strong></p><a id="more"></a><h3 id="常见用法"><a href="#常见用法" class="headerlink" title="常见用法"></a>常见用法</h3><ol><li>执行get请求</li></ol><figure class="highlight scilab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 向具有指定ID的用户发出请求</span></span><br><span class="line">axios.get(<span class="string">'/user?ID=12345'</span>)</span><br><span class="line">.<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(response)</span> &#123;</span></span><br><span class="line">    console.<span class="built_in">log</span>(response);</span><br><span class="line">&#125;)</span><br><span class="line">.<span class="keyword">catch</span>(<span class="function"><span class="keyword">function</span> <span class="params">(error)</span> &#123;</span></span><br><span class="line">    console.<span class="built_in">log</span>(<span class="built_in">error</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 也可以通过 params 对象传递参数</span></span><br><span class="line">axios.get(<span class="string">'/user'</span>, &#123;</span><br><span class="line">    params: &#123;</span><br><span class="line">    ID: <span class="number">12345</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">.<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(response)</span> &#123;</span></span><br><span class="line">    console.<span class="built_in">log</span>(response);</span><br><span class="line">&#125;)</span><br><span class="line">.<span class="keyword">catch</span>(<span class="function"><span class="keyword">function</span> <span class="params">(error)</span> &#123;</span></span><br><span class="line">    console.<span class="built_in">log</span>(<span class="built_in">error</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><ol start="2"><li>执行post请求</li></ol><figure class="highlight scilab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">axios.post(<span class="string">'/user'</span>, &#123;</span><br><span class="line">    firstName: <span class="string">'Fred'</span>,</span><br><span class="line">    lastName: <span class="string">'Flintstone'</span></span><br><span class="line">&#125;)</span><br><span class="line">.<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(response)</span> &#123;</span></span><br><span class="line">    console.<span class="built_in">log</span>(response);</span><br><span class="line">&#125;)</span><br><span class="line">.<span class="keyword">catch</span>(<span class="function"><span class="keyword">function</span> <span class="params">(error)</span> &#123;</span></span><br><span class="line">    console.<span class="built_in">log</span>(<span class="built_in">error</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><ol start="3"><li>执行多个并发请求</li></ol><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title">getUserAccount</span>() &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">axios.get('/user/12345')</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title">getUserPermissions</span>() &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">axios.get('/user/12345/permissions')</span>;</span><br><span class="line">&#125;</span><br><span class="line">axios.<span class="keyword">all</span>([getUserAccount(), getUserPermissions()])</span><br><span class="line">  .<span class="keyword">then</span>(axios.spread(<span class="keyword">function</span> <span class="title"></span>(acct, perms) &#123;</span><br><span class="line">    //两个请求现已完成</span><br><span class="line">  &#125;));</span><br></pre></td></tr></table></figure><p>更多可参考：<br><a href="https://ykloveyxk.github.io/2017/02/25/axios%E5%85%A8%E6%94%BB%E7%95%A5/" target="_blank" rel="noopener">https://ykloveyxk.github.io/2017/02/25/axios%E5%85%A8%E6%94%BB%E7%95%A5/</a></p>]]></content>
       
       <categories>
           
-          <category> 十万个为什么 </category>
+          <category> 库/框架 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> React </tag>
-            
-            <tag> Javascript </tag>
+            <tag> axios </tag>
             
         </tags>
       
@@ -102,6 +115,29 @@
       
       
         <tags>
+            
+            <tag> Javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>React-Element中的StyleSheet.reset方法为何可以重置样式？</title>
+      <link href="/2018/06/13/React-Element%E4%B8%AD%E7%9A%84StyleSheet.reset%E6%96%B9%E6%B3%95%E4%B8%BA%E4%BD%95%E5%8F%AF%E4%BB%A5%E9%87%8D%E7%BD%AE%E6%A0%B7%E5%BC%8F%EF%BC%9F/"/>
+      <url>/2018/06/13/React-Element%E4%B8%AD%E7%9A%84StyleSheet.reset%E6%96%B9%E6%B3%95%E4%B8%BA%E4%BD%95%E5%8F%AF%E4%BB%A5%E9%87%8D%E7%BD%AE%E6%A0%B7%E5%BC%8F%EF%BC%9F/</url>
+      <content type="html"><![CDATA[<p>在React-Element的Select组件中，一上来就来了行看不懂的代码，<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">StyleSheet</span><span class="selector-class">.reset</span>(`</span><br><span class="line">  <span class="selector-class">.ishow-select-dropdown</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute <span class="meta">!important</span>;</span><br><span class="line">  &#125;</span><br><span class="line">`)</span><br></pre></td></tr></table></figure></p><p>发现该方法可以实现，在当前页面插入带着样式的style标签，来实现对css的覆盖，心生疑虑，这到底是react的API还是es7黑魔法？</p><p>而后发现 Style只是从外部引入的一个模块，代码 动态添加了style节点</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">exports.reset = <span class="function"><span class="params">css</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> style = <span class="built_in">document</span>.createElement(<span class="string">'style'</span>); <span class="comment">//通过指定名称创建一个style元素</span></span><br><span class="line"></span><br><span class="line">  style.type = <span class="string">'text/css'</span>;</span><br><span class="line">  <span class="comment">//1.必需的 type 属性规定样式表的 MIME 类型。  2.type 属性指示 &lt;style&gt; 与 &lt;/style&gt; 标签之间的内容。 3.值 "text/css" 指示内容是标准的 CSS。</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (style.styleSheet)&#123;</span><br><span class="line">    style.styleSheet.cssText = css;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    style.appendChild(<span class="built_in">document</span>.createTextNode(css));</span><br><span class="line">  &#125;</span><br><span class="line">«»</span><br><span class="line">  (<span class="built_in">document</span>.head || <span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>]).appendChild(style);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>被这波原生js操作晃瞎了眼呀~只好再复习下原生用法</p><ul><li><a href="http://www.w3school.com.cn/tags/att_style_type.asp" target="_blank" rel="noopener">style 标签的 type 属性</a></li></ul>]]></content>
+      
+      <categories>
+          
+          <category> 十万个为什么 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> React </tag>
             
             <tag> Javascript </tag>
             
@@ -379,21 +415,6 @@
     </entry>
     
     <entry>
-      <title>node版本切换工具的常用命令</title>
-      <link href="/2018/05/05/node%E7%89%88%E6%9C%AC%E5%88%87%E6%8D%A2%E5%B7%A5%E5%85%B7nvm%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-      <url>/2018/05/05/node%E7%89%88%E6%9C%AC%E5%88%87%E6%8D%A2%E5%B7%A5%E5%85%B7nvm%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-      <content type="html"><![CDATA[<p>使用场景：同时处理几个项目时，依赖的node版本不同，使用nvm工具，可以实现快速切换。</p><ul><li>nvm install <version>  ## 安装指定版本，可模糊安装，如：安装v4.4.0，既可nvm install v4.4.0，又可nvm install 4.4</version></li><li>nvm uninstall <version>  ## 删除已安装的指定版本，语法与install类似</version></li><li>nvm use <version>  ## 切换使用指定的版本node</version></li><li>nvm ls  ## 列出所有安装的版本</li><li>nvm ls-remote  ## 列出所以远程服务器的版本（官方node version list）</li><li>nvm current  ## 显示当前的版本</li><li>nvm alias <name> <version>  ## 给不同的版本号添加别名</version></name></li><li>nvm unalias <name>  ## 删除已定义的别名</name></li><li>nvm reinstall-packages <version>  ## 在当前版本node环境下，重新全局安装指定版本号的npm包</version></li></ul>]]></content>
-      
-      <categories>
-          
-          <category> 效率工具 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>less配合vscode使用的配置</title>
       <link href="/2018/05/05/less%E9%85%8D%E5%90%88vscode%E4%BD%BF%E7%94%A8%E7%9A%84%E9%85%8D%E7%BD%AE/"/>
       <url>/2018/05/05/less%E9%85%8D%E5%90%88vscode%E4%BD%BF%E7%94%A8%E7%9A%84%E9%85%8D%E7%BD%AE/</url>
@@ -413,6 +434,21 @@
             <tag> vscode </tag>
             
         </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>node版本切换工具的常用命令</title>
+      <link href="/2018/05/05/node%E7%89%88%E6%9C%AC%E5%88%87%E6%8D%A2%E5%B7%A5%E5%85%B7nvm%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+      <url>/2018/05/05/node%E7%89%88%E6%9C%AC%E5%88%87%E6%8D%A2%E5%B7%A5%E5%85%B7nvm%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+      <content type="html"><![CDATA[<p>使用场景：同时处理几个项目时，依赖的node版本不同，使用nvm工具，可以实现快速切换。</p><ul><li>nvm install <version>  ## 安装指定版本，可模糊安装，如：安装v4.4.0，既可nvm install v4.4.0，又可nvm install 4.4</version></li><li>nvm uninstall <version>  ## 删除已安装的指定版本，语法与install类似</version></li><li>nvm use <version>  ## 切换使用指定的版本node</version></li><li>nvm ls  ## 列出所有安装的版本</li><li>nvm ls-remote  ## 列出所以远程服务器的版本（官方node version list）</li><li>nvm current  ## 显示当前的版本</li><li>nvm alias <name> <version>  ## 给不同的版本号添加别名</version></name></li><li>nvm unalias <name>  ## 删除已定义的别名</name></li><li>nvm reinstall-packages <version>  ## 在当前版本node环境下，重新全局安装指定版本号的npm包</version></li></ul>]]></content>
+      
+      <categories>
+          
+          <category> 效率工具 </category>
+          
+      </categories>
+      
       
     </entry>
     
