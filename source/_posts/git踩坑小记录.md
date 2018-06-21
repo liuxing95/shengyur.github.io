@@ -1,5 +1,5 @@
-title: git踩坑日常全记录
-date: 2018/05/26
+title: git菜鸟踩坑日常
+date: 2018/06/21
 categories: 效率工具
 tags:
   - git
@@ -8,7 +8,7 @@ tags:
 在工作中使用的代码管理工具之前一直是svn，最近接触了几个使用git管理代码的项目，拉个代码拉了半天，十分生气，记录下踩坑日常，避免重蹈覆辙~
 <!--more-->
 
-### 权限已经开好，但是git clone提示找不到该路径???
+### 权限已经开好，但是git clone提示找不到该路径?
 1. 首先，确定权限已经是开好的，没问题
 2. 回忆了一下公司的代码仓库，猜测可能是用户名与自己本地默认的自己github的账号密码不一样
 3. 查看当前用户的配置
@@ -33,5 +33,31 @@ git credential-manager remove [--path <installion_path>] [--passive] [--force]  
 ```
 6. 重新拉取代码，提示输入用户名密码，切换账户后问题解决
 
+### git clone 默认的是master分支，如何切换到branch分支？
+
+git初始化一般是这样。
+```
+git init
+
+git clone .git地址
+```
+之后重点来了，因为clone下来的一般为master分支，有可能不是想拉下来的分支。可以使用以下的方法
+```
+git branch -a 先查看当前远端分支情况
+
+git  checkout origin/xxx  选择远端xxx分支
+
+git branch xxx  创建本地xxx分支
+
+git checkout xxx  选择新创建的分支就可以了。
+```
+当然还有更简单的方法。
+```
+直接指定clone某个分支即可：
+
+git clone -b xxx .git地址
+```
+
 参考：
 https://segmentfault.com/q/1010000007962678
+https://blog.csdn.net/yun__yang/article/details/74466059
