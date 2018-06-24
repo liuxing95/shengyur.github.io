@@ -136,10 +136,42 @@ npm doc <package name>可以打开该依赖包的官网，其实就是打开了p
 4. main：模块引入方法require()在引入包时，会优先检查这个字段，并将其作为包中其余模块的入口，如果该字段不存在，则node会检查目录下的index.js，index.node，index.json作为默认入口。
 
 
+### 使用淘宝 NPM 镜像
+大家都知道国内直接使用 npm 的官方镜像是非常慢的，这里推荐使用淘宝 NPM 镜像。
 
+淘宝 NPM 镜像是一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10分钟 一次以保证尽量与官方服务同步。
+
+你可以使用淘宝定制的 cnpm (gzip 压缩支持) 命令行工具代替默认的 npm:
+```
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+```
+这样就可以使用 cnpm 命令来安装模块了：
+```
+cnpm install [name]
+```
+
+### NPM 常用命令
+```
+NPM提供了很多命令，例如install和publish，使用npm help可查看所有命令。
+
+NPM提供了很多命令，例如install和publish，使用npm help可查看所有命令。
+
+使用npm help <command>可查看某条命令的详细帮助，例如npm help install。
+
+在package.json所在目录下使用npm install . -g可先在本地安装当前命令行程序，可用于发布前的本地测试。
+
+使用npm update <package>可以把当前目录下node_modules子目录里边的对应模块更新至最新版本。
+
+使用npm update <package> -g可以把全局安装的对应命令行程序更新至最新版。
+
+使用npm cache clear可以清空NPM本地缓存，用于对付使用相同版本号发布新版本代码的人。
+
+使用npm unpublish <package>@<version>可以撤销发布自己发布过的某个版本代码。
+```
 
 
 
 原文：
 https://segmentfault.com/a/1190000007624021
 http://www.ruanyifeng.com/blog/2011/05/how_to_choose_free_software_licenses.html
+https://www.runoob.com/nodejs/nodejs-npm.html
