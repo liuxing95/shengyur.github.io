@@ -6,7 +6,7 @@
       <title>ES3、ES5、ES6常用操作数组对象方法</title>
       <link href="/2018/06/25/ES3%E3%80%81ES5%E3%80%81ES6%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95/"/>
       <url>/2018/06/25/ES3%E3%80%81ES5%E3%80%81ES6%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95/</url>
-      <content type="html"><![CDATA[<p>使用场景：<br>使用react、vue等数据驱动的框架时，dom操作基本不用了，更多的是修改数据来驱动UI渲染。<br>所以总结一下常用的方法，以提高coding效率~</p>]]></content>
+      <content type="html"><![CDATA[<p>使用场景：<br>使用react、vue等数据驱动的框架时，dom操作基本不用了，更多的是修改数据来驱动UI渲染。<br>所以总结一下常用的方法，以提高coding效率~</p><h2 id="数组方法"><a href="#数组方法" class="headerlink" title="数组方法"></a>数组方法</h2><h3 id="Array-对象属性"><a href="#Array-对象属性" class="headerlink" title="Array 对象属性"></a>Array 对象属性</h3><ul><li>constructor 返回对创建此对象的数组函数的引用。</li><li>length 设置或返回数组中元素的数目。</li><li>prototype 使您有能力向对象添加属性和方法。</li></ul><a id="more"></a><h3 id="传统Array-对象方法"><a href="#传统Array-对象方法" class="headerlink" title="传统Array 对象方法"></a>传统Array 对象方法</h3><ul><li>toSource() 返回该对象的源代码。</li><li>toString() 把数组转换为字符串，并返回结果。</li><li>toLocaleString() 把数组转换为本地数组，并返回结果。</li><li>valueOf() 返回数组对象的原始值</li></ul><h3 id="修改原数组"><a href="#修改原数组" class="headerlink" title="修改原数组"></a>修改原数组</h3><ul><li>push() 向数组的末尾添加一个或更多元素，并返回新的长度。</li><li>unshift() 向数组的开头添加一个或更多元素，并返回新的长度。</li><li>pop() 删除并返回数组的最后一个元素</li><li>shift() 删除并返回数组的第一个元素</li><li>sort() 对数组的元素进行排序</li><li>reverse() 颠倒数组中元素的顺序。</li><li>splice() 删除元素，并向数组添加新元素。</li></ul><p>参考：<br> <a href="https://segmentfault.com/a/1190000014100810?utm_source=index-hottest" target="_blank" rel="noopener">https://segmentfault.com/a/1190000014100810?utm_source=index-hottest</a></p>]]></content>
       
       <categories>
           
