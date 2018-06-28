@@ -3,6 +3,21 @@
   
     
     <entry>
+      <title>为啥老王要敲头？</title>
+      <link href="/2018/06/28/%E4%B8%BA%E4%BB%80%E4%B9%88%E7%8E%8B%E8%80%81%E5%B8%88%E8%A6%81%E6%95%B2%E5%A4%B4%EF%BC%9F/"/>
+      <url>/2018/06/28/%E4%B8%BA%E4%BB%80%E4%B9%88%E7%8E%8B%E8%80%81%E5%B8%88%E8%A6%81%E6%95%B2%E5%A4%B4%EF%BC%9F/</url>
+      <content type="html"><![CDATA[<p>因为写全局的公共方法没写容错处理额==,mark一下</p><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 把分钟数转化为day天hour小时minute分钟</span></span><br><span class="line"><span class="comment"> * @param minutes 总分钟数</span></span><br><span class="line"><span class="comment"> * @param onlyToHour 是否只精确到小时（true/false）</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">transferMinutesToTime(minutes,onlyToHour) &#123;</span><br><span class="line">  <span class="keyword">const</span> basicMinute = <span class="number">60</span>;</span><br><span class="line">  <span class="keyword">const</span> basicHour = <span class="number">24</span>;</span><br><span class="line">  <span class="keyword">const</span> basic = basicHour*basicMinute;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//如果minutes不是非负整数，返回null</span></span><br><span class="line">  <span class="keyword">if</span>(!<span class="keyword">this</span>.checkByRegExp.nonnegativeInt(minutes))&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//如果minutes等于0</span></span><br><span class="line">  <span class="keyword">if</span> (minutes == <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> onlyToHour ? &#123;</span><br><span class="line">      <span class="built_in">day</span>: <span class="number">0</span>,</span><br><span class="line">      <span class="built_in">hour</span>: <span class="number">0</span></span><br><span class="line">    &#125; : &#123;</span><br><span class="line">        <span class="built_in">day</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="built_in">hour</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="built_in">minute</span>: <span class="number">0</span></span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//如果minutes为正整数</span></span><br><span class="line">  let all = Number(minutes);</span><br><span class="line">  let <span class="built_in">day</span> = Math.<span class="built_in">floor</span>(all/basic);</span><br><span class="line">  let <span class="built_in">hour</span> = Math.<span class="built_in">floor</span>((all%basic)/basicMinute);</span><br><span class="line">  let <span class="built_in">minute</span> = all%basic%basicMinute;</span><br><span class="line"></span><br><span class="line">  let data = &#123;</span><br><span class="line">    <span class="built_in">day</span>: <span class="built_in">day</span>?<span class="built_in">day</span>:<span class="number">0</span>,</span><br><span class="line">    <span class="built_in">hour</span>: <span class="built_in">hour</span>?<span class="built_in">hour</span>:<span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(!onlyToHour)&#123;</span><br><span class="line">    data.<span class="built_in">minute</span> = <span class="built_in">minute</span>?<span class="built_in">minute</span>:<span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      <categories>
+          
+          <category> 前端基础 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>React基础之 使用排坑日常</title>
       <link href="/2018/06/27/React%E5%9F%BA%E7%A1%80%E4%B9%8B%20%E6%8E%92%E5%9D%91%E6%97%A5%E5%B8%B8/"/>
       <url>/2018/06/27/React%E5%9F%BA%E7%A1%80%E4%B9%8B%20%E6%8E%92%E5%9D%91%E6%97%A5%E5%B8%B8/</url>
@@ -62,27 +77,6 @@
     </entry>
     
     <entry>
-      <title>git菜鸟踩坑日常</title>
-      <link href="/2018/06/20/git%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0%E5%BD%95/"/>
-      <url>/2018/06/20/git%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0%E5%BD%95/</url>
-      <content type="html"><![CDATA[<p>在工作中使用的代码管理工具之前一直是svn，最近接触了几个使用git管理代码的项目，拉个代码拉了半天，十分生气，记录下踩坑日常，避免重蹈覆辙~<br><a id="more"></a></p><h3 id="权限已经开，但是git-clone提示找不到该路径"><a href="#权限已经开，但是git-clone提示找不到该路径" class="headerlink" title="权限已经开，但是git clone提示找不到该路径?"></a>权限已经开，但是git clone提示找不到该路径?</h3><ol><li>首先，确定权限已经是开好</li><li>回忆了一下公司的代码仓库，猜测可能是用户名与自己本地默认的自己github的账号密码不一样</li><li><p>查看当前用户的配置</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git<span class="built_in"> config </span>--global  --list</span><br></pre></td></tr></table></figure></li><li><p>发现显示的用户名果然与公司的域账号用户名密码不一致，每次拉代码也没让输用户名密码，怕不是默认记住密码了？？?</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git<span class="built_in"> config </span>--system --list</span><br></pre></td></tr></table></figure></li></ol><ul><li>查看系统config文件中，对是否记住密码的配置，果然有记住密码的配置<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">credential <span class="keyword">helper</span>== credential <span class="keyword">helper</span></span><br></pre></td></tr></table></figure></li></ul><ol start="5"><li><p>清除保存的用户名密码</p><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git credential-manager delete</span><br><span class="line"></span><br><span class="line">或者</span><br><span class="line"></span><br><span class="line">git credential-manager remove <span class="string">[--path &lt;installion_path&gt;]</span> <span class="string">[--passive]</span> <span class="string">[--force]</span>   //停止使用管理工具<span class="string">[中括号选填]</span></span><br></pre></td></tr></table></figure></li><li><p>重新拉取代码，提示输入用户名密码，切换账户后问题解决</p></li></ol><h3 id="git-clone-默认的是master分支，如何切换到branch分支？"><a href="#git-clone-默认的是master分支，如何切换到branch分支？" class="headerlink" title="git clone 默认的是master分支，如何切换到branch分支？"></a>git clone 默认的是master分支，如何切换到branch分支？</h3><p>git初始化一般是这样。<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line"></span><br><span class="line">git <span class="keyword">clone</span> <span class="title">.git</span>地址</span><br></pre></td></tr></table></figure></p><p>之后重点来了，因为clone下来的一般为master分支，有可能不是想拉下来的分支。可以使用以下的方法<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">branch </span>-a 先查看当前远端分支情况</span><br><span class="line"></span><br><span class="line">git  checkout <span class="keyword">origin/xxx </span> 选择远端xxx分支</span><br><span class="line"></span><br><span class="line">git <span class="keyword">branch </span>xxx  创建本地xxx分支</span><br><span class="line"></span><br><span class="line">git checkout xxx  选择新创建的分支就可以了。</span><br></pre></td></tr></table></figure></p><p>当然还有更简单的方法。<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">直接指定clone某个分支即可：</span><br><span class="line"></span><br><span class="line">git <span class="keyword">clone</span> <span class="title">-b</span> xxx .git地址</span><br></pre></td></tr></table></figure></p><h3 id="tuniu内部的代码npm-install报错？"><a href="#tuniu内部的代码npm-install报错？" class="headerlink" title="tuniu内部的代码npm install报错？"></a>tuniu内部的代码npm install报错？</h3><p>先安装<a href="https://www.npmjs.com/package/cnpm" target="_blank" rel="noopener">cnpm</a>：<br> <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="selector-tag">i</span> cnpm -g</span><br></pre></td></tr></table></figure></p><p> 设置公司内部镜像：<br> <figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm <span class="keyword">set</span> registry <span class="comment">http:</span>//<span class="comment">10.40.189.154:7001</span></span><br></pre></td></tr></table></figure></p><p>不报错的话，就设置好了，使用命令检查一下：<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm <span class="built_in">config</span> <span class="built_in">get</span> registry <span class="comment">//看下是否返回 http://10.40.189.154:7001</span></span><br></pre></td></tr></table></figure></p><p>是的话,再<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">cnpm i</span></span><br></pre></td></tr></table></figure></p><p>安装依赖就行了。</p><p>参考：<br><a href="https://segmentfault.com/q/1010000007962678" target="_blank" rel="noopener">https://segmentfault.com/q/1010000007962678</a><br><a href="https://blog.csdn.net/yun__yang/article/details/74466059" target="_blank" rel="noopener">https://blog.csdn.net/yun__yang/article/details/74466059</a></p>]]></content>
-      
-      <categories>
-          
-          <category> 效率工具 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> git </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>YAML语言入门</title>
       <link href="/2018/06/20/YAML%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"/>
       <url>/2018/06/20/YAML%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/</url>
@@ -98,6 +92,27 @@
         <tags>
             
             <tag> YAML </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>git菜鸟踩坑日常</title>
+      <link href="/2018/06/20/git%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0%E5%BD%95/"/>
+      <url>/2018/06/20/git%E8%B8%A9%E5%9D%91%E5%B0%8F%E8%AE%B0%E5%BD%95/</url>
+      <content type="html"><![CDATA[<p>在工作中使用的代码管理工具之前一直是svn，最近接触了几个使用git管理代码的项目，拉个代码拉了半天，十分生气，记录下踩坑日常，避免重蹈覆辙~<br><a id="more"></a></p><h3 id="权限已经开，但是git-clone提示找不到该路径"><a href="#权限已经开，但是git-clone提示找不到该路径" class="headerlink" title="权限已经开，但是git clone提示找不到该路径?"></a>权限已经开，但是git clone提示找不到该路径?</h3><ol><li>首先，确定权限已经是开好</li><li>回忆了一下公司的代码仓库，猜测可能是用户名与自己本地默认的自己github的账号密码不一样</li><li><p>查看当前用户的配置</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git<span class="built_in"> config </span>--global  --list</span><br></pre></td></tr></table></figure></li><li><p>发现显示的用户名果然与公司的域账号用户名密码不一致，每次拉代码也没让输用户名密码，怕不是默认记住密码了？？?</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git<span class="built_in"> config </span>--system --list</span><br></pre></td></tr></table></figure></li></ol><ul><li>查看系统config文件中，对是否记住密码的配置，果然有记住密码的配置<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">credential <span class="keyword">helper</span>== credential <span class="keyword">helper</span></span><br></pre></td></tr></table></figure></li></ul><ol start="5"><li><p>清除保存的用户名密码</p><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git credential-manager delete</span><br><span class="line"></span><br><span class="line">或者</span><br><span class="line"></span><br><span class="line">git credential-manager remove <span class="string">[--path &lt;installion_path&gt;]</span> <span class="string">[--passive]</span> <span class="string">[--force]</span>   //停止使用管理工具<span class="string">[中括号选填]</span></span><br></pre></td></tr></table></figure></li><li><p>重新拉取代码，提示输入用户名密码，切换账户后问题解决</p></li></ol><h3 id="git-clone-默认的是master分支，如何切换到branch分支？"><a href="#git-clone-默认的是master分支，如何切换到branch分支？" class="headerlink" title="git clone 默认的是master分支，如何切换到branch分支？"></a>git clone 默认的是master分支，如何切换到branch分支？</h3><p>git初始化一般是这样。<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line"></span><br><span class="line">git <span class="keyword">clone</span> <span class="title">.git</span>地址</span><br></pre></td></tr></table></figure></p><p>之后重点来了，因为clone下来的一般为master分支，有可能不是想拉下来的分支。可以使用以下的方法<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">branch </span>-a 先查看当前远端分支情况</span><br><span class="line"></span><br><span class="line">git  checkout <span class="keyword">origin/xxx </span> 选择远端xxx分支</span><br><span class="line"></span><br><span class="line">git <span class="keyword">branch </span>xxx  创建本地xxx分支</span><br><span class="line"></span><br><span class="line">git checkout xxx  选择新创建的分支就可以了。</span><br></pre></td></tr></table></figure></p><p>当然还有更简单的方法。<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">直接指定clone某个分支即可：</span><br><span class="line"></span><br><span class="line">git <span class="keyword">clone</span> <span class="title">-b</span> xxx .git地址</span><br></pre></td></tr></table></figure></p><h3 id="tuniu内部的代码npm-install报错？"><a href="#tuniu内部的代码npm-install报错？" class="headerlink" title="tuniu内部的代码npm install报错？"></a>tuniu内部的代码npm install报错？</h3><p>先安装<a href="https://www.npmjs.com/package/cnpm" target="_blank" rel="noopener">cnpm</a>：<br> <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="selector-tag">i</span> cnpm -g</span><br></pre></td></tr></table></figure></p><p> 设置公司内部镜像：<br> <figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm <span class="keyword">set</span> registry <span class="comment">http:</span>//<span class="comment">10.40.189.154:7001</span></span><br></pre></td></tr></table></figure></p><p>不报错的话，就设置好了，使用命令检查一下：<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm <span class="built_in">config</span> <span class="built_in">get</span> registry <span class="comment">//看下是否返回 http://10.40.189.154:7001</span></span><br></pre></td></tr></table></figure></p><p>是的话,再<br><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">cnpm i</span></span><br></pre></td></tr></table></figure></p><p>安装依赖就行了。</p><p>参考：<br><a href="https://segmentfault.com/q/1010000007962678" target="_blank" rel="noopener">https://segmentfault.com/q/1010000007962678</a><br><a href="https://blog.csdn.net/yun__yang/article/details/74466059" target="_blank" rel="noopener">https://blog.csdn.net/yun__yang/article/details/74466059</a></p>]]></content>
+      
+      <categories>
+          
+          <category> 效率工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
             
         </tags>
       
@@ -453,21 +468,6 @@
     </entry>
     
     <entry>
-      <title>node版本切换工具的常用命令</title>
-      <link href="/2018/05/05/node%E7%89%88%E6%9C%AC%E5%88%87%E6%8D%A2%E5%B7%A5%E5%85%B7nvm%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-      <url>/2018/05/05/node%E7%89%88%E6%9C%AC%E5%88%87%E6%8D%A2%E5%B7%A5%E5%85%B7nvm%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-      <content type="html"><![CDATA[<p>使用场景：同时处理几个项目时，依赖的node版本不同，使用nvm工具，可以实现快速切换。</p><ul><li>nvm install <version>  ## 安装指定版本，可模糊安装，如：安装v4.4.0，既可nvm install v4.4.0，又可nvm install 4.4</version></li><li>nvm uninstall <version>  ## 删除已安装的指定版本，语法与install类似</version></li><li>nvm use <version>  ## 切换使用指定的版本node</version></li><li>nvm ls  ## 列出所有安装的版本</li><li>nvm ls-remote  ## 列出所以远程服务器的版本（官方node version list）</li><li>nvm current  ## 显示当前的版本</li><li>nvm alias <name> <version>  ## 给不同的版本号添加别名</version></name></li><li>nvm unalias <name>  ## 删除已定义的别名</name></li><li>nvm reinstall-packages <version>  ## 在当前版本node环境下，重新全局安装指定版本号的npm包</version></li></ul>]]></content>
-      
-      <categories>
-          
-          <category> 效率工具 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>less配合vscode使用的配置</title>
       <link href="/2018/05/05/less%E9%85%8D%E5%90%88vscode%E4%BD%BF%E7%94%A8%E7%9A%84%E9%85%8D%E7%BD%AE/"/>
       <url>/2018/05/05/less%E9%85%8D%E5%90%88vscode%E4%BD%BF%E7%94%A8%E7%9A%84%E9%85%8D%E7%BD%AE/</url>
@@ -487,6 +487,21 @@
             <tag> vscode </tag>
             
         </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>node版本切换工具的常用命令</title>
+      <link href="/2018/05/05/node%E7%89%88%E6%9C%AC%E5%88%87%E6%8D%A2%E5%B7%A5%E5%85%B7nvm%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+      <url>/2018/05/05/node%E7%89%88%E6%9C%AC%E5%88%87%E6%8D%A2%E5%B7%A5%E5%85%B7nvm%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+      <content type="html"><![CDATA[<p>使用场景：同时处理几个项目时，依赖的node版本不同，使用nvm工具，可以实现快速切换。</p><ul><li>nvm install <version>  ## 安装指定版本，可模糊安装，如：安装v4.4.0，既可nvm install v4.4.0，又可nvm install 4.4</version></li><li>nvm uninstall <version>  ## 删除已安装的指定版本，语法与install类似</version></li><li>nvm use <version>  ## 切换使用指定的版本node</version></li><li>nvm ls  ## 列出所有安装的版本</li><li>nvm ls-remote  ## 列出所以远程服务器的版本（官方node version list）</li><li>nvm current  ## 显示当前的版本</li><li>nvm alias <name> <version>  ## 给不同的版本号添加别名</version></name></li><li>nvm unalias <name>  ## 删除已定义的别名</name></li><li>nvm reinstall-packages <version>  ## 在当前版本node环境下，重新全局安装指定版本号的npm包</version></li></ul>]]></content>
+      
+      <categories>
+          
+          <category> 效率工具 </category>
+          
+      </categories>
+      
       
     </entry>
     
