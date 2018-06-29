@@ -1,5 +1,5 @@
 title: React基础之 使用排坑日常
-date: 2018/06/27
+date: 2018/06/29
 categories:
   - 库/框架
 toc: true
@@ -72,6 +72,67 @@ Formatte组件通过props属性接受了date的值，但它仍任然不能获知
 
 这通常称为"从上而下"，或者单项数据流。任何state始终由某个特定组件所有，并且从该state导出的任何数据 或 UI只能影响树种 "下方"的组件。
 
+### 实际开发中遇到的问题
+
+1. render()里面只能return一个JSX，
+
+   因此在使用数组的.map()方法时，每次循环都要return一个JSX。
+
+2. 在使用数组的.map()方法时，建议使用ES6的箭头函数，避免出现this指向的问题。
+
+		oneArray.map((item,index)=>{
+			return (
+				<a onClick={this.play.bind(this)}>test</a>
+			)
+		})
+
+3. 在写一个onClick的时候，如果这个function中没有用到this.state或者this.props时，
+
+	建议不要使用this.test.bind(this)这种形式的写法，因为都要重新渲染组件，影响性能。
+
+	常用的几种写法有:
+
+		(1)没有入参时
+			onClick={this.test}
+
+		(2)有入参时
+			onClick={this.test('1')}
+
+		(3)语句很少时
+			onClick={() => this.state.triggle = !this.state.triggle}
+
+4. 父组件调用子组件的方法：
+	class Parent extends React.Component{
+		<Child  onRef={(ref) => this.child = ref} />
+
+		test = () => {
+			this.child.onchange();
+		}
+	}
+
+	class Child extends React.Component{
+		componentDidMount(){
+			this.props.onRef = this;
+		}
+
+		onchange = () => {
+			alert('child');
+		}
+	}
+
+5. es6中，寻找数组中是否包含某个元素，
+	let arr = [1,2,3,-5]
+	arr.find((n) => n<0)  //-5
+	arr.findIndex((n) => n<0)  //3
+
+	注意:indexOf方法无法识别数组的NaN成员，但是findIndex可以通过Object.is方法做到。
+	[NaN].findIndex(y => Object.is(NaN,y))
+
+6. 使用this.forceUpdate()来更新当前组件的render()方法。
+
+7. 如果两个兄弟组件A和B，A想调用B组件的方法，必须通过两兄弟的父组件C来调用。
+
 
 参考：
 - [React中文文档](http://www.css88.com/react/docs/handling-events.html)
+- [王老师的积累](https://github.com/wang-qingqing/accumulate/blob/master/%E6%A1%86%E6%9E%B6%E7%B1%BB/REACT/React%E5%BC%80%E5%8F%91%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98.md)
