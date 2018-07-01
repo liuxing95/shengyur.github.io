@@ -72,6 +72,13 @@ Formatte组件通过props属性接受了date的值，但它仍任然不能获知
 
 这通常称为"从上而下"，或者单项数据流。任何state始终由某个特定组件所有，并且从该state导出的任何数据 或 UI只能影响树种 "下方"的组件。
 
+### Refs
+
+React支持一个可以附加到任何组件的特殊属性ref。ref属性可以是一个字符串或一个回调函数。
+当ref属性是一个回调函数时，函数接收底层DOM元素或类实例（取决于元素的类型）作为参数。这使你可以直接访问DOM元素或组件实例。
+
+
+
 ### 实际开发中遇到的问题
 
 1. render()里面只能return一个JSX，
@@ -102,23 +109,7 @@ Formatte组件通过props属性接受了date的值，但它仍任然不能获知
 			onClick={() => this.state.triggle = !this.state.triggle}
 
 4. 父组件调用子组件的方法：
-	class Parent extends React.Component{
-		<Child  onRef={(ref) => this.child = ref} />
-
-		test = () => {
-			this.child.onchange();
-		}
-	}
-
-	class Child extends React.Component{
-		componentDidMount(){
-			this.props.onRef = this;
-		}
-
-		onchange = () => {
-			alert('child');
-		}
-	}
+	[父组件调用子组件的方法](https://shengyur.github.io/2018/06/02/React%E5%9F%BA%E7%A1%80%E4%B9%8B%20%E7%88%B6%E7%BB%84%E4%BB%B6%E5%A6%82%E4%BD%95%E8%B0%83%E7%94%A8%E5%AD%90%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/)
 
 5. es6中，寻找数组中是否包含某个元素，
 	let arr = [1,2,3,-5]
