@@ -1,5 +1,5 @@
 title: React基础之 使用排坑日常
-date: 2018/06/29
+date: 2018/07/04
 categories:
   - 库/框架
 toc: true
@@ -77,6 +77,86 @@ Formatte组件通过props属性接受了date的值，但它仍任然不能获知
 React支持一个可以附加到任何组件的特殊属性ref。ref属性可以是一个字符串或一个回调函数。
 当ref属性是一个回调函数时，函数接收底层DOM元素或类实例（取决于元素的类型）作为参数。这使你可以直接访问DOM元素或组件实例。
 
+### 理解JSX
+直接在js代码中书写html标记，JSX的本质就是动态创建组件的语法糖
+```
+const name= 'shengyu';
+const element = <h1>hello,{name}</h1>;
+```
+也可以表示为
+```
+const name='shengyu';
+const element = React.createElement(
+  'h1', //标签名
+  null, //属性
+  'hello,', //内容
+  name //内容
+  );
+```
+优点：无需多学习一门模板语言，用js就可以动态创建UI
+
+核心概念：在JSX中使用表达式
+
+1. JSX本身也是表达式
+```
+const ele=<h1>Hello,world!</h1>;
+```
+
+2. 在属性中使用表达式
+```
+<MyCompnonent yee={1+2+3+5} >
+```
+
+3. 延展属性
+```
+const props = {firstName:'Ben',lastName:'Hector'};
+const greeting =<Greeting {...props} >
+```
+解构赋值的拷贝是浅拷贝，即如果一个键的值是复合类型的值(数组，对象，函数)，那么解构赋值拷贝的是这个值的引用，而不是这个值的副本。
+```
+let obj = {a:{b:1}}
+let {...x} = obj;
+obj.a.b = 2;
+x.a.b // 2;
+```
+4. 表达式作为子元素
+```
+const ele=<li>{props.xxx}</li>
+```
+
+
+### React生命周期 以及使用场景
+https://www.cnblogs.com/yangzhou33/p/8799278.html
+
+
+### 项目经验
+
+1. 以组件方式考虑UI的构建
+
+2. 理解React状态机 （props + state ==> view ）
+  - React组件一般不提供方法，而是某种状态机
+  - React组件可以理解为一个纯函数
+  - 单项数据绑定
+
+3. 创建组件的步骤
+  - 创建静态ui
+  - 考虑组件的状态组成
+  - 考虑组件的交互方式
+
+4. 受控组件 vs 非受控组件
+  受控组件：表单元素的状态由使用者维护
+  非受控组件：表单元素状态DOM自身维护
+
+5. 如何创建组件？
+- 单一责任原则
+  1.每个组件只做一件事
+  2.如果组件变的复杂，那么应该拆分成小组件
+
+6. 数据状态管理:DRY（Don't repeat yourself）原则
+  1.能计算得到的状态就不要单独存储
+  2.组件尽量无状态，所需数据通过props获取
+
+
 
 
 ### 实际开发中遇到的问题
@@ -112,12 +192,15 @@ React支持一个可以附加到任何组件的特殊属性ref。ref属性可以
 	[父组件调用子组件的方法](https://shengyur.github.io/2018/06/02/React%E5%9F%BA%E7%A1%80%E4%B9%8B%20%E7%88%B6%E7%BB%84%E4%BB%B6%E5%A6%82%E4%BD%95%E8%B0%83%E7%94%A8%E5%AD%90%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/)
 
 5. es6中，寻找数组中是否包含某个元素，
-	let arr = [1,2,3,-5]
-	arr.find((n) => n<0)  //-5
-	arr.findIndex((n) => n<0)  //3
-
+  ```
+  	let arr = [1,2,3,-5]
+  	arr.find((n) => n<0)  //-5
+  	arr.findIndex((n) => n<0)  //3
+  ```
 	注意:indexOf方法无法识别数组的NaN成员，但是findIndex可以通过Object.is方法做到。
-	[NaN].findIndex(y => Object.is(NaN,y))
+  ```
+	  [NaN].findIndex(y => Object.is(NaN,y))
+  ```
 
 6. 使用this.forceUpdate()来更新当前组件的render()方法。
 
