@@ -5,6 +5,12 @@ tags:
   - React
 ---
 
+### react性能查看工具
+
+### react组件的性能优化（渲染角度优化）
+
+
+
 ### 利用shouldComponentUpdate钩子函数优化react性能以及引入immutable库的必要性
 ### 谈一谈创建React Component的几种方式
 ### React PureComponent 使用指南
@@ -13,3 +19,4 @@ tags:
 https://www.cnblogs.com/penghuwan/p/6707254.html
 https://www.cnblogs.com/Unknw/p/6431375.html
 http://www.wulv.site/2017-05-31/react-purecomponent.html
+https://www.jianshu.com/p/333f390f2e84
