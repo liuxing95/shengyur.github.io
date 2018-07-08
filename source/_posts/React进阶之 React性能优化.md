@@ -12,7 +12,11 @@ tags:
 
 
 ### 利用shouldComponentUpdate钩子函数优化react性能以及引入immutable库的必要性
+
+
 ### 谈一谈创建React Component的几种方式
+
+
 ### React PureComponent 使用指南
 
 原文：
