@@ -105,5 +105,5 @@ git config 文件配置项
 - 小白教程：https://www.cnblogs.com/yaoxiaowen/p/8227873.html
 - 秒秒钟入门markdown语法：https://www.jianshu.com/p/q81RER
 - Git忽略规则.gitignore梳理:https://www.cnblogs.com/kevingrace/p/5690241.html
-- 王老师的博客 https://github.com/wang-qingqing/accumulate/blob/master/%E5%B7%A5%E5%85%B7%E7%B1%BB/Git/git%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95.md
+- 王老师的博客:https://github.com/wang-qingqing/accumulate/blob/master/%E5%B7%A5%E5%85%B7%E7%B1%BB/Git/git%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95.md
 - git config https://blog.csdn.net/gaochenchen/article/details/76187480
