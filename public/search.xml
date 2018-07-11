@@ -3,6 +3,27 @@
   
     
     <entry>
+      <title>XMLHttpRequest</title>
+      <link href="/2018/07/11/XMLHttpRequest/"/>
+      <url>/2018/07/11/XMLHttpRequest/</url>
+      <content type="html"><![CDATA[<h3 id="XMLHttpRequest-是什么？"><a href="#XMLHttpRequest-是什么？" class="headerlink" title="XMLHttpRequest 是什么？"></a>XMLHttpRequest 是什么？</h3><p>XMLHttpRequest 是一个 API，它为客户端提供了在客户端和服务器之间传输数据的功能。它提供了一个通过 URL 来获取数据的简单方式，并且不会使整个页面刷新。这使得网页只更新一部分页面而不会打扰到用户。XMLHttpRequest 在 AJAX 中被大量使用。</p><h3 id="创建-XMLHttpRequest-对象"><a href="#创建-XMLHttpRequest-对象" class="headerlink" title="创建 XMLHttpRequest 对象"></a>创建 XMLHttpRequest 对象</h3><p>所有现代浏览器 (IE7+、Firefox、Chrome、Safari 以及 Opera) 都内建了 XMLHttpRequest 对象。</p><p>通过一行简单的 JavaScript 代码，我们就可以创建 XMLHttpRequest 对象。</p><h3 id="创建-XMLHttpRequest-对象的语法"><a href="#创建-XMLHttpRequest-对象的语法" class="headerlink" title="创建 XMLHttpRequest 对象的语法"></a>创建 XMLHttpRequest 对象的语法</h3><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">xmlhttp</span>=new XMLHttpRequest()<span class="comment">;</span></span><br></pre></td></tr></table></figure><p>老版本的 Internet Explorer （IE5 和 IE6）使用 ActiveX 对象<br><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">xmlhttp</span>=new ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>)<span class="comment">;</span></span><br></pre></td></tr></table></figure></p><h3 id="使用-XMLHttpRequest-对象"><a href="#使用-XMLHttpRequest-对象" class="headerlink" title="使用 XMLHttpRequest 对象"></a>使用 XMLHttpRequest 对象</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xmlhttp;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadXMLDoc</span>(<span class="params">url</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">    xmlhttp=<span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest)&#123;<span class="comment">// code for all new browsers</span></span><br><span class="line">      xmlhttp=<span class="keyword">new</span> XMLHttpRequest(); <span class="comment">//创建xml对象</span></span><br><span class="line">      &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">window</span>.ActiveXObject)&#123;<span class="comment">// code for IE5 and IE6</span></span><br><span class="line">      xmlhttp=<span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    <span class="keyword">if</span> (xmlhttp!=<span class="literal">null</span>)&#123;</span><br><span class="line">          xmlhttp.onreadystatechange=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">              <span class="keyword">if</span> (xmlhttp.readyState==<span class="number">4</span>)&#123;<span class="comment">// 4 = "loaded" 整个请求过程已经完毕</span></span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (xmlhttp.status==<span class="number">200</span>)&#123;请求的响应状态码 (例如, 状态码<span class="number">200</span> 表示一个成功的请求).</span><br><span class="line">                  <span class="comment">// ...our code here...TODO</span></span><br><span class="line">                  &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                  alert(<span class="string">"Problem retrieving XML data"</span>);</span><br><span class="line">                  &#125;</span><br><span class="line">                &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          xmlhttp.open(<span class="string">"GET"</span>,url,<span class="literal">true</span>);</span><br><span class="line">          xmlhttp.send(<span class="literal">null</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">      alert(<span class="string">"Your browser does not support XMLHTTP."</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><p>参考：</p><ul><li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest</a></li><li><a href="http://www.w3school.com.cn/xml/xml_http.asp" target="_blank" rel="noopener">http://www.w3school.com.cn/xml/xml_http.asp</a></li></ul>]]></content>
+      
+      <categories>
+          
+          <category> 前端基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> XMLHttpRequest </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>React基础之 组件生命周期</title>
       <link href="/2018/07/09/React%E5%9F%BA%E7%A1%80%E4%B9%8B%20react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/"/>
       <url>/2018/07/09/React%E5%9F%BA%E7%A1%80%E4%B9%8B%20react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</url>
@@ -260,27 +281,6 @@
     </entry>
     
     <entry>
-      <title>axios常用攻略</title>
-      <link href="/2018/06/14/axios%E5%B8%B8%E7%94%A8%E6%94%BB%E7%95%A5/"/>
-      <url>/2018/06/14/axios%E5%B8%B8%E7%94%A8%E6%94%BB%E7%95%A5/</url>
-      <content type="html"><![CDATA[<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>npm install axios</p><p><strong>axios 依赖本机要支持ES6 Promise实现。 如果您的环境不支持ES6 Promises，您可以使用polyfill。</strong></p><a id="more"></a><h3 id="常见用法"><a href="#常见用法" class="headerlink" title="常见用法"></a>常见用法</h3><ol><li>执行get请求</li></ol><figure class="highlight scilab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 向具有指定ID的用户发出请求</span></span><br><span class="line">axios.get(<span class="string">'/user?ID=12345'</span>)</span><br><span class="line">.<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(response)</span> &#123;</span></span><br><span class="line">    console.<span class="built_in">log</span>(response);</span><br><span class="line">&#125;)</span><br><span class="line">.<span class="keyword">catch</span>(<span class="function"><span class="keyword">function</span> <span class="params">(error)</span> &#123;</span></span><br><span class="line">    console.<span class="built_in">log</span>(<span class="built_in">error</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 也可以通过 params 对象传递参数</span></span><br><span class="line">axios.get(<span class="string">'/user'</span>, &#123;</span><br><span class="line">    params: &#123;</span><br><span class="line">    ID: <span class="number">12345</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">.<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(response)</span> &#123;</span></span><br><span class="line">    console.<span class="built_in">log</span>(response);</span><br><span class="line">&#125;)</span><br><span class="line">.<span class="keyword">catch</span>(<span class="function"><span class="keyword">function</span> <span class="params">(error)</span> &#123;</span></span><br><span class="line">    console.<span class="built_in">log</span>(<span class="built_in">error</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><ol start="2"><li>执行post请求</li></ol><figure class="highlight scilab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">axios.post(<span class="string">'/user'</span>, &#123;</span><br><span class="line">    firstName: <span class="string">'Fred'</span>,</span><br><span class="line">    lastName: <span class="string">'Flintstone'</span></span><br><span class="line">&#125;)</span><br><span class="line">.<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(response)</span> &#123;</span></span><br><span class="line">    console.<span class="built_in">log</span>(response);</span><br><span class="line">&#125;)</span><br><span class="line">.<span class="keyword">catch</span>(<span class="function"><span class="keyword">function</span> <span class="params">(error)</span> &#123;</span></span><br><span class="line">    console.<span class="built_in">log</span>(<span class="built_in">error</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><ol start="3"><li>执行多个并发请求</li></ol><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title">getUserAccount</span>() &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">axios.get('/user/12345')</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title">getUserPermissions</span>() &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">axios.get('/user/12345/permissions')</span>;</span><br><span class="line">&#125;</span><br><span class="line">axios.<span class="keyword">all</span>([getUserAccount(), getUserPermissions()])</span><br><span class="line">  .<span class="keyword">then</span>(axios.spread(<span class="keyword">function</span> <span class="title"></span>(acct, perms) &#123;</span><br><span class="line">    //两个请求现已完成</span><br><span class="line">  &#125;));</span><br></pre></td></tr></table></figure><p>更多可参考：<br><a href="https://ykloveyxk.github.io/2017/02/25/axios%E5%85%A8%E6%94%BB%E7%95%A5/" target="_blank" rel="noopener">https://ykloveyxk.github.io/2017/02/25/axios%E5%85%A8%E6%94%BB%E7%95%A5/</a></p>]]></content>
-      
-      <categories>
-          
-          <category> 库/框架 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> axios </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>mock工具使用</title>
       <link href="/2018/06/14/mock%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/"/>
       <url>/2018/06/14/mock%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/</url>
@@ -296,6 +296,27 @@
         <tags>
             
             <tag> mock </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>axios常用攻略</title>
+      <link href="/2018/06/14/axios%E5%B8%B8%E7%94%A8%E6%94%BB%E7%95%A5/"/>
+      <url>/2018/06/14/axios%E5%B8%B8%E7%94%A8%E6%94%BB%E7%95%A5/</url>
+      <content type="html"><![CDATA[<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>npm install axios</p><p><strong>axios 依赖本机要支持ES6 Promise实现。 如果您的环境不支持ES6 Promises，您可以使用polyfill。</strong></p><a id="more"></a><h3 id="常见用法"><a href="#常见用法" class="headerlink" title="常见用法"></a>常见用法</h3><ol><li>执行get请求</li></ol><figure class="highlight scilab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 向具有指定ID的用户发出请求</span></span><br><span class="line">axios.get(<span class="string">'/user?ID=12345'</span>)</span><br><span class="line">.<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(response)</span> &#123;</span></span><br><span class="line">    console.<span class="built_in">log</span>(response);</span><br><span class="line">&#125;)</span><br><span class="line">.<span class="keyword">catch</span>(<span class="function"><span class="keyword">function</span> <span class="params">(error)</span> &#123;</span></span><br><span class="line">    console.<span class="built_in">log</span>(<span class="built_in">error</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 也可以通过 params 对象传递参数</span></span><br><span class="line">axios.get(<span class="string">'/user'</span>, &#123;</span><br><span class="line">    params: &#123;</span><br><span class="line">    ID: <span class="number">12345</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">.<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(response)</span> &#123;</span></span><br><span class="line">    console.<span class="built_in">log</span>(response);</span><br><span class="line">&#125;)</span><br><span class="line">.<span class="keyword">catch</span>(<span class="function"><span class="keyword">function</span> <span class="params">(error)</span> &#123;</span></span><br><span class="line">    console.<span class="built_in">log</span>(<span class="built_in">error</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><ol start="2"><li>执行post请求</li></ol><figure class="highlight scilab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">axios.post(<span class="string">'/user'</span>, &#123;</span><br><span class="line">    firstName: <span class="string">'Fred'</span>,</span><br><span class="line">    lastName: <span class="string">'Flintstone'</span></span><br><span class="line">&#125;)</span><br><span class="line">.<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span> <span class="params">(response)</span> &#123;</span></span><br><span class="line">    console.<span class="built_in">log</span>(response);</span><br><span class="line">&#125;)</span><br><span class="line">.<span class="keyword">catch</span>(<span class="function"><span class="keyword">function</span> <span class="params">(error)</span> &#123;</span></span><br><span class="line">    console.<span class="built_in">log</span>(<span class="built_in">error</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><ol start="3"><li>执行多个并发请求</li></ol><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title">getUserAccount</span>() &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">axios.get('/user/12345')</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title">getUserPermissions</span>() &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="type">axios.get('/user/12345/permissions')</span>;</span><br><span class="line">&#125;</span><br><span class="line">axios.<span class="keyword">all</span>([getUserAccount(), getUserPermissions()])</span><br><span class="line">  .<span class="keyword">then</span>(axios.spread(<span class="keyword">function</span> <span class="title"></span>(acct, perms) &#123;</span><br><span class="line">    //两个请求现已完成</span><br><span class="line">  &#125;));</span><br></pre></td></tr></table></figure><p>更多可参考：<br><a href="https://ykloveyxk.github.io/2017/02/25/axios%E5%85%A8%E6%94%BB%E7%95%A5/" target="_blank" rel="noopener">https://ykloveyxk.github.io/2017/02/25/axios%E5%85%A8%E6%94%BB%E7%95%A5/</a></p>]]></content>
+      
+      <categories>
+          
+          <category> 库/框架 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> axios </tag>
             
         </tags>
       
@@ -337,9 +358,9 @@
       
         <tags>
             
-            <tag> Javascript </tag>
-            
             <tag> React </tag>
+            
+            <tag> Javascript </tag>
             
         </tags>
       
@@ -552,21 +573,6 @@
     </entry>
     
     <entry>
-      <title>node版本切换工具的常用命令</title>
-      <link href="/2018/05/05/node%E7%89%88%E6%9C%AC%E5%88%87%E6%8D%A2%E5%B7%A5%E5%85%B7nvm%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-      <url>/2018/05/05/node%E7%89%88%E6%9C%AC%E5%88%87%E6%8D%A2%E5%B7%A5%E5%85%B7nvm%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-      <content type="html"><![CDATA[<p>使用场景：同时处理几个项目时，依赖的node版本不同，使用nvm工具，可以实现快速切换。</p><ul><li>nvm install <version>  ## 安装指定版本，可模糊安装，如：安装v4.4.0，既可nvm install v4.4.0，又可nvm install 4.4</version></li><li>nvm uninstall <version>  ## 删除已安装的指定版本，语法与install类似</version></li><li>nvm use <version>  ## 切换使用指定的版本node</version></li><li>nvm ls  ## 列出所有安装的版本</li><li>nvm ls-remote  ## 列出所以远程服务器的版本（官方node version list）</li><li>nvm current  ## 显示当前的版本</li><li>nvm alias <name> <version>  ## 给不同的版本号添加别名</version></name></li><li>nvm unalias <name>  ## 删除已定义的别名</name></li><li>nvm reinstall-packages <version>  ## 在当前版本node环境下，重新全局安装指定版本号的npm包</version></li></ul>]]></content>
-      
-      <categories>
-          
-          <category> 效率工具 </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    <entry>
       <title>less配合vscode使用的配置</title>
       <link href="/2018/05/05/less%E9%85%8D%E5%90%88vscode%E4%BD%BF%E7%94%A8%E7%9A%84%E9%85%8D%E7%BD%AE/"/>
       <url>/2018/05/05/less%E9%85%8D%E5%90%88vscode%E4%BD%BF%E7%94%A8%E7%9A%84%E9%85%8D%E7%BD%AE/</url>
@@ -590,10 +596,25 @@
     </entry>
     
     <entry>
+      <title>node版本切换工具的常用命令</title>
+      <link href="/2018/05/05/node%E7%89%88%E6%9C%AC%E5%88%87%E6%8D%A2%E5%B7%A5%E5%85%B7nvm%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+      <url>/2018/05/05/node%E7%89%88%E6%9C%AC%E5%88%87%E6%8D%A2%E5%B7%A5%E5%85%B7nvm%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+      <content type="html"><![CDATA[<p>使用场景：同时处理几个项目时，依赖的node版本不同，使用nvm工具，可以实现快速切换。</p><ul><li>nvm install <version>  ## 安装指定版本，可模糊安装，如：安装v4.4.0，既可nvm install v4.4.0，又可nvm install 4.4</version></li><li>nvm uninstall <version>  ## 删除已安装的指定版本，语法与install类似</version></li><li>nvm use <version>  ## 切换使用指定的版本node</version></li><li>nvm ls  ## 列出所有安装的版本</li><li>nvm ls-remote  ## 列出所以远程服务器的版本（官方node version list）</li><li>nvm current  ## 显示当前的版本</li><li>nvm alias <name> <version>  ## 给不同的版本号添加别名</version></name></li><li>nvm unalias <name>  ## 删除已定义的别名</name></li><li>nvm reinstall-packages <version>  ## 在当前版本node环境下，重新全局安装指定版本号的npm包</version></li></ul>]]></content>
+      
+      <categories>
+          
+          <category> 效率工具 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>从面试的角度夯实前端基础</title>
       <link href="/2018/05/02/%E4%BB%8E%E9%9D%A2%E8%AF%95%E7%9A%84%E8%A7%92%E5%BA%A6%E5%A4%AF%E5%AE%9E%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/"/>
       <url>/2018/05/02/%E4%BB%8E%E9%9D%A2%E8%AF%95%E7%9A%84%E8%A7%92%E5%BA%A6%E5%A4%AF%E5%AE%9E%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/</url>
-      <content type="html"><![CDATA[<h3 id="CSS基础"><a href="#CSS基础" class="headerlink" title="CSS基础"></a>CSS基础</h3><ol><li>如何实现一个三栏布局，要求两边固定宽度，中间宽度自适应？</li><li>圣杯布局 双飞翼布局 flex布局分别是什么？</li><li>css的几种垂直居中的方法</li></ol><a id="more"></a><h3 id="Javascript基础"><a href="#Javascript基础" class="headerlink" title="Javascript基础"></a>Javascript基础</h3><ol><li>js中的变量提升是什么原理？</li><li>标准浏览器的事件模型是什么样子的？与ie6 ie7 ie8的差异在哪里？<ul><li>先冒泡还是先捕获？</li><li>各浏览器监听函数的写法是否一致？</li><li>冒泡和捕获的区别是什么？</li></ul></li><li>闭包的原理是什么？为什么会造成内存泄露？</li></ol><h3 id="HTTP协议-amp-缓存"><a href="#HTTP协议-amp-缓存" class="headerlink" title="HTTP协议 &amp; 缓存"></a>HTTP协议 &amp; 缓存</h3><ol><li>下面的状态码代表的是什么意思？200、204、301、302、304、404？</li><li>HTTP1 和 HTTP1.1的主要差别是什么？为什么有这些差别？catch-control/expired/E-tag/last-modify?</li><li>对运营商劫持有什么好的处理办法？</li></ol><h3 id="安全问题"><a href="#安全问题" class="headerlink" title="安全问题"></a>安全问题</h3><ol><li>富文本编辑器如何解决XSS问题？</li><li>为什么Restfal API不应当使用’Access-Cross-Origin:* ‘来实现跨域？</li></ol><h3 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h3><ol><li>Express 和 Koa有什么差别？</li><li>怎么在Node做CI测试？</li></ol><h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><ol><li>Yslow 和 PageSpeed用过吗?记得其中多少规则？</li><li>CDN是什么?为什么能资源加速?</li><li>前端怎么样拿到DNS的查询时间？</li></ol><h3 id="设计-amp-交互-amp-体验"><a href="#设计-amp-交互-amp-体验" class="headerlink" title="设计&amp;交互&amp;体验"></a>设计&amp;交互&amp;体验</h3><ol><li>PNG 和 JPG 的区别是什么？</li></ol><h3 id="前端工程化"><a href="#前端工程化" class="headerlink" title="前端工程化"></a>前端工程化</h3><ol><li>你使用过构建工具来编译前端代码吗?使用过 Grunt、Gulp、webpack、FIS中的一些吗？</li></ol><h3 id="经验考察"><a href="#经验考察" class="headerlink" title="经验考察"></a>经验考察</h3><ol><li>你遇到过兼容性问题吗?最令你影响深刻的兼容问题什么?</li></ol><h3 id="框架类"><a href="#框架类" class="headerlink" title="框架类"></a>框架类</h3><ol><li><a href="https://segmentfault.com/a/1190000008102870" target="_blank" rel="noopener">React 常用面试题目与分析</a><h3 id="持续更新中······欢迎补充"><a href="#持续更新中······欢迎补充" class="headerlink" title="持续更新中······欢迎补充"></a>持续更新中······欢迎补充</h3></li></ol>]]></content>
+      <content type="html"><![CDATA[<h3 id="CSS基础"><a href="#CSS基础" class="headerlink" title="CSS基础"></a>CSS基础</h3><ol><li>如何实现一个三栏布局，要求两边固定宽度，中间宽度自适应？</li><li>圣杯布局 双飞翼布局 flex布局分别是什么？</li><li>css的几种垂直居中的方法</li></ol><a id="more"></a><h3 id="Javascript基础"><a href="#Javascript基础" class="headerlink" title="Javascript基础"></a>Javascript基础</h3><ol><li>js中的变量提升是什么原理？</li><li>标准浏览器的事件模型是什么样子的？与ie6 ie7 ie8的差异在哪里？<ul><li>先冒泡还是先捕获？</li><li>各浏览器监听函数的写法是否一致？</li><li>冒泡和捕获的区别是什么？</li></ul></li><li>闭包的原理是什么？为什么会造成内存泄露？</li><li>XMLHttpRequest</li></ol><h3 id="HTTP协议-amp-缓存"><a href="#HTTP协议-amp-缓存" class="headerlink" title="HTTP协议 &amp; 缓存"></a>HTTP协议 &amp; 缓存</h3><ol><li><p>下面的状态码代表的是什么意思？200、204、301、302、304、404？</p><p>状态码      响应类别                           原因短语<br>1XX        信息性状态码（Informational）        服务器正在处理请求<br>2XX        成功状态码（Success）               请求已正常处理完毕<br>3XX        重定向状态码（Redirection）          需要进行额外操作以完成请求<br>4XX        客户端错误状态码（Client Error）     客户端原因导致服务器无法处理请求<br>5XX        服务器错误状态码（Server Error）     服务器原因导致处理请求出错</p></li></ol><ol start="2"><li>HTTP1 和 HTTP1.1的主要差别是什么？为什么有这些差别？catch-control/expired/E-tag/last-modify?</li><li>对运营商劫持有什么好的处理办法？</li></ol><h3 id="安全问题"><a href="#安全问题" class="headerlink" title="安全问题"></a>安全问题</h3><ol><li>富文本编辑器如何解决XSS问题？</li><li>为什么Restfal API不应当使用’Access-Cross-Origin:* ‘来实现跨域？</li></ol><h3 id="Node"><a href="#Node" class="headerlink" title="Node"></a>Node</h3><ol><li>Express 和 Koa有什么差别？</li><li>怎么在Node做CI测试？</li></ol><h3 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h3><ol><li>Yslow 和 PageSpeed用过吗?记得其中多少规则？</li><li>CDN是什么?为什么能资源加速?</li><li>前端怎么样拿到DNS的查询时间？</li></ol><h3 id="设计-amp-交互-amp-体验"><a href="#设计-amp-交互-amp-体验" class="headerlink" title="设计&amp;交互&amp;体验"></a>设计&amp;交互&amp;体验</h3><ol><li>PNG 和 JPG 的区别是什么？</li></ol><h3 id="前端工程化"><a href="#前端工程化" class="headerlink" title="前端工程化"></a>前端工程化</h3><ol><li>你使用过构建工具来编译前端代码吗?使用过 Grunt、Gulp、webpack、FIS中的一些吗？</li></ol><h3 id="经验考察"><a href="#经验考察" class="headerlink" title="经验考察"></a>经验考察</h3><ol><li>你遇到过兼容性问题吗?最令你影响深刻的兼容问题什么?</li></ol><h3 id="框架类"><a href="#框架类" class="headerlink" title="框架类"></a>框架类</h3><ol><li><a href="https://segmentfault.com/a/1190000008102870" target="_blank" rel="noopener">React 常用面试题目与分析</a><h3 id="持续更新中······欢迎补充"><a href="#持续更新中······欢迎补充" class="headerlink" title="持续更新中······欢迎补充"></a>持续更新中······欢迎补充</h3></li></ol>]]></content>
       
       <categories>
           
