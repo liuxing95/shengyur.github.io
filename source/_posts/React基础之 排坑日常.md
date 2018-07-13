@@ -1,12 +1,11 @@
 title: React基础之 使用排坑日常
-date: 2018/07/12
+date: 2018/07/13
 categories:
   - 库/框架
 toc: true
 tags:
   - React
 ---
-
 
 ### state(状态) 更新可能是异步的
 
@@ -166,19 +165,19 @@ https://www.cnblogs.com/yangzhou33/p/8799278.html
    因此在使用数组的.map()方法时，每次循环都要return一个JSX。
 
 2. 在使用数组的.map()方法时，建议使用ES6的箭头函数，避免出现this指向的问题。
-
+```
 		oneArray.map((item,index)=>{
 			return (
 				<a onClick={this.play.bind(this)}>test</a>
 			)
 		})
-
+```
 3. 在写一个onClick的时候，如果这个function中没有用到this.state或者this.props时，
 
 	建议不要使用this.test.bind(this)这种形式的写法，因为都要重新渲染组件，影响性能。
 
 	常用的几种写法有:
-
+```
 		(1)没有入参时
 			onClick={this.test}
 
@@ -187,7 +186,7 @@ https://www.cnblogs.com/yangzhou33/p/8799278.html
 
 		(3)语句很少时
 			onClick={() => this.state.triggle = !this.state.triggle}
-
+```
 4. 父组件调用子组件的方法：
 	[父组件调用子组件的方法](https://shengyur.github.io/2018/06/02/React%E5%9F%BA%E7%A1%80%E4%B9%8B%20%E7%88%B6%E7%BB%84%E4%BB%B6%E5%A6%82%E4%BD%95%E8%B0%83%E7%94%A8%E5%AD%90%E7%BB%84%E4%BB%B6%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95/)
 
@@ -201,11 +200,75 @@ https://www.cnblogs.com/yangzhou33/p/8799278.html
   ```
 	  [NaN].findIndex(y => Object.is(NaN,y))
   ```
-
 6. 使用this.forceUpdate()来更新当前组件的render()方法。
 
 7. 如果两个兄弟组件A和B，A想调用B组件的方法，必须通过两兄弟的父组件C来调用。
 
+
+8. 将一个形如"a:b:c"的字符串转换成数组，其中a、b、c为整型，转换后的数组内也是整数。
+```
+  Array.from("1:3:5".split(":"),(value) => Number(value))
+```
+9. 代码优化：
+```
+  let {store,onChange,disabled} = this.props;
+  相当于
+  let store = this.props.store;
+  let onChange = this.props.onChange;
+  let disabled = this.props.disabled;
+```
+10. 回调方法：
+```
+  callback && typeof (callback) == 'function' && callback();
+```
+11. render中的双重循环：
+```
+  <Form.Item label="出游人群" labelWidth="120px">
+    {   
+      tabAttrObj.touristType.length ?
+        this.touristTypeList.map((allType,key) => {
+          return(
+            tabAttrObj.touristType.map((type, index) => {
+              return <div>111</div>
+            })
+          )                                     
+        })
+      :''
+    }
+  </Form.Item>
+```
+12. 传入子组件的代码优化：
+```
+  <CollectMethod {...this.props}  />
+  相当于
+  <AddInput store={this.props.store}
+              basicListIndex={this.props.basicListIndex}
+              tabAttrObj={this.props.tabAttrObj}
+  />
+```
+13. class 的取值函数（getter）和存值函数（setter）
+```
+  class MyClass {
+    constructor() {
+      // ...
+    }
+    get prop() {
+      return 'getter';
+    }
+    set prop(value) {
+      console.log('setter: '+value);
+    }
+
+    render(){
+      return <div>{this.prop}</div>
+    }
+  }
+```
+14. 复制数组，修改a2的值，并不会影响a1的值。
+```
+  const a1 = [1, 2];
+  const a2 = [...a1];
+```
 
 参考：
 - [React中文文档](http://www.css88.com/react/docs/handling-events.html)
