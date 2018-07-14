@@ -1,5 +1,5 @@
 title: XMLHttpRequest
-date: 2018/07/11
+date: 2018/06/10
 categories: 前端基础
 toc: true
 tags:

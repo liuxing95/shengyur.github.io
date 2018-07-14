@@ -1,4 +1,4 @@
-title: React基础之 使用排坑日常
+title: React基础之 使用排坑指南
 date: 2018/07/13
 categories:
   - 库/框架
@@ -56,7 +56,7 @@ function withdraw(account, amount) {
 ```
 所有 React 组件都必须是纯函数，并禁止修改其自身 props 。
 
-### 单项数据流(数据向下流动）
+### 单向数据流(数据向下流动）
 
 state(状态)经常被称为 本地状态 或 封装状态，是因为它不能 被拥有并设置它的组件以外的任何组件 访问。
 一个组件可以选择将state向下传递，作为其子组件的props属性：
