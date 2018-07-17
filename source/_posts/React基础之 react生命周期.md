@@ -16,7 +16,7 @@ tags:
 1. 当state需要从props初始化时，使用
 2. **尽量不要使用，维护两者状态一致性会增加复杂度**
 3. 每次render都会调用
-运用场景：表单空间获取默认值
+运用场景：表单控件获取默认值
 
 ### componentDidMount
 1. ui渲染完之后调用
@@ -30,6 +30,7 @@ tags:
 ### getSnapshotBeforeUpdate (react 16.3）
 1. 在页面render之前调用，state已跟新
 运用场景：获取render之前的dom状态
+getSnapshotBeforeUpdate()在最新的渲染输出提交给DOM前将会立即调用。它让你的组件能在当前的值可能要改变前获得它们。这一生命周期返回的任何值将会 作为参数被传递给componentDidUpdate()。
 
 ### componentDidUpdate
 1. 每次UI跟新时被调用
@@ -51,3 +52,4 @@ tags:
 原文：
 - 图片来自 http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 - https://www.zhihu.com/question/278328905/answer/399344422
+- react生命周期 https://www.cnblogs.com/yangzhou33/p/8799278.html
