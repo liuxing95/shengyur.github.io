@@ -30,7 +30,7 @@ tags:
 ### getSnapshotBeforeUpdate (react 16.3）
 1. 在页面render之前调用，state已跟新
 运用场景：获取render之前的dom状态
-getSnapshotBeforeUpdate()在最新的渲染输出提交给DOM前将会立即调用。它让你的组件能在当前的值可能要改变前获得它们。这一生命周期返回的任何值将会 作为参数被传递给componentDidUpdate()。
+getSnapshotBeforeUpdate()在最新的渲染输出提交给DOM前将会立即调用。它让你的组件能在当前的值可能要改变前获得它们。这一生命周期返回的任何值将会作为参数被传递给componentDidUpdate()。
 
 ### componentDidUpdate
 1. 每次UI跟新时被调用
