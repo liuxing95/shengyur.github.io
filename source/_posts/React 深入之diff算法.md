@@ -1,4 +1,4 @@
-title: React 深入之diff算法
+title: React 深入之 diff算法
 date: 2018/07/19
 categories:
   - 库/框架

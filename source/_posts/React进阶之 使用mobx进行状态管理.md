@@ -6,23 +6,18 @@ tags:
   - React
 ---
 
-### 参考资料
 
-- [mobx中文文档](http://cn.mobx.js.org/)
 
-- [mobx todolist](https://codesandbox.io/s/2vmzpM0wK)
-
-- [mobx 在ReactJS项目中的运用](https://blog.csdn.net/u012125579/article/details/69400169)
-
-<!--more-->
-
-### 入门
+### mobx解决了什么问题
+react 关注的状态(state)到视图(view)的问题。而 mobx 关注的是状态仓库（store）到的状态(state)的问题。
 任何源自应用状态的东西都应该自动地获得。
 
 #### 与react的关系
 react提供了优化UI渲染的机制，这种机制就是通过使用虚拟DOM来减少昂贵的DOM变化的数量。mobx提供了优化应用状态与react组件同步的机制，这种机制就是使用响应式虚拟依赖状态图标，它只有在真正需要的时候才更新并且永远保持是最新的。
 
 #### 核心概念
+mobx 最最核心的概念只有2个。 @observable 和 @observer ，它们分别对应的是被观察者和观察者。这是大家常见的观察者模式，不过这里使用了，ES7 中的 装饰器。
+
 ##### Observable state（可观察的状态）
 
  通过使用@observable装饰器来给现有的数据结构（如对象、数组和类实例）添加可观察的功能。
@@ -54,6 +49,7 @@ A.使用类和真正的引用 B.保证参照完整性 C.更简单的actions更�
 
 #### mobx要点 将一个应用变成响应式的步骤
 (1)定义状态并使其可观察
+
 ```
 import {observable} from 'mobx';
 var appState = observable({ timer: 0 })
@@ -121,6 +117,11 @@ import {observer} from 'mobx-react';
  C.可以使用xxx.slice()将其变成原生数组。
 
 原文：
-1. [JS 装饰器（Decorator）场景实战](https://juejin.im/post/59f1c484f265da431c6f8940)
-2. [王老师的积累](https://github.com/wang-qingqing/accumulate/blob/f5779c2a734420200a34531d2ad7bdcfd91bd0ec/%E6%A1%86%E6%9E%B6%E7%B1%BB/REACT/React%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/%E5%85%B3%E4%BA%8EMobx.md)
-3. [MOBX中文文档](https://gismanli.github.io/MobX-ZH/intro/overview.html)
+- [JS 装饰器（Decorator）场景实战](https://juejin.im/post/59f1c484f265da431c6f8940)
+- [王老师的积累](https://github.com/wang-qingqing/accumulate/blob/f5779c2a734420200a34531d2ad7bdcfd91bd0ec/%E6%A1%86%E6%9E%B6%E7%B1%BB/REACT/React%E7%8A%B6%E6%80%81%E7%AE%A1%E7%90%86/%E5%85%B3%E4%BA%8EMobx.md)
+
+- [mobx中文文档](http://cn.mobx.js.org/)
+
+- [mobx todolist](https://codesandbox.io/s/2vmzpM0wK)
+
+- [mobx 在ReactJS项目中的运用](https://blog.csdn.net/u012125579/article/details/69400169)
