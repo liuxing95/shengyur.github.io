@@ -45,6 +45,27 @@
     </entry>
     
     <entry>
+      <title>前端性能优化的常见措施</title>
+      <link href="/2018/07/21/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%9A%84%E5%B8%B8%E8%A7%81%E6%8E%AA%E6%96%BD/"/>
+      <url>/2018/07/21/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%9A%84%E5%B8%B8%E8%A7%81%E6%8E%AA%E6%96%BD/</url>
+      <content type="html"><![CDATA[<h3 id="Yslow的23条优化建议"><a href="#Yslow的23条优化建议" class="headerlink" title="Yslow的23条优化建议"></a>Yslow的23条优化建议</h3><ol><li>Minimize HTTP Requests</li><li>Use a Content Delivery Network</li><li>Avoid empty src or href</li><li>Add an Expires or a Cache-Control Header</li><li>Gzip Components</li><li>Put StyleSheets at the Top</li><li>Put Scripts at the Bottom</li><li>Avoid CSS Expressions</li><li>Make JavaScript and CSS External</li><li>Reduce DNS Lookups</li><li>Minify JavaScript and CSS</li><li>Avoid Redirects</li><li>Remove Duplicate Scripts</li><li>Configure ETags</li><li>Make AJAX Cacheable</li><li>Use GET for AJAX Requests</li><li>Reduce the Number of DOM Elements</li><li>No 404s</li><li>Reduce Cookie Size</li><li>Use Cookie-Free Domains for Components</li><li>Avoid Filters</li><li>Do Not Scale Images in HTML</li><li>Make favicon.ico Small and Cacheable</li></ol><h3 id="HTTP-Cathe"><a href="#HTTP-Cathe" class="headerlink" title="HTTP Cathe"></a>HTTP Cathe</h3><p>Expires</p><p>Cache-control</p><p>Last-Modified + Etag</p><p>Vary<br><a href="http://www.cnblogs.com/vajoy/p/5341664.html" target="_blank" rel="noopener">http://www.cnblogs.com/vajoy/p/5341664.html</a></p><p>原文：</p><ul><li>http缓存 <a href="http://www.cnblogs.com/vajoy/p/5341664.html" target="_blank" rel="noopener">http://www.cnblogs.com/vajoy/p/5341664.html</a></li><li>yslow <a href="http://yslow.org/" target="_blank" rel="noopener">http://yslow.org/</a></li></ul>]]></content>
+      
+      <categories>
+          
+          <category> 性能优化 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 性能 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>CDN工作机制以及原理浅析</title>
       <link href="/2018/07/21/CDN%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6%E4%BB%A5%E5%8F%8A%E5%8E%9F%E7%90%86%E6%B5%85%E6%9E%90/"/>
       <url>/2018/07/21/CDN%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6%E4%BB%A5%E5%8F%8A%E5%8E%9F%E7%90%86%E6%B5%85%E6%9E%90/</url>
@@ -68,21 +89,21 @@
     </entry>
     
     <entry>
-      <title>前端性能优化的常见措施</title>
-      <link href="/2018/07/21/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%9A%84%E5%B8%B8%E8%A7%81%E6%8E%AA%E6%96%BD/"/>
-      <url>/2018/07/21/%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%9A%84%E5%B8%B8%E8%A7%81%E6%8E%AA%E6%96%BD/</url>
-      <content type="html"><![CDATA[<h3 id="Yslow的23条优化建议"><a href="#Yslow的23条优化建议" class="headerlink" title="Yslow的23条优化建议"></a>Yslow的23条优化建议</h3><ol><li>Minimize HTTP Requests</li><li>Use a Content Delivery Network</li><li>Avoid empty src or href</li><li>Add an Expires or a Cache-Control Header</li><li>Gzip Components</li><li>Put StyleSheets at the Top</li><li>Put Scripts at the Bottom</li><li>Avoid CSS Expressions</li><li>Make JavaScript and CSS External</li><li>Reduce DNS Lookups</li><li>Minify JavaScript and CSS</li><li>Avoid Redirects</li><li>Remove Duplicate Scripts</li><li>Configure ETags</li><li>Make AJAX Cacheable</li><li>Use GET for AJAX Requests</li><li>Reduce the Number of DOM Elements</li><li>No 404s</li><li>Reduce Cookie Size</li><li>Use Cookie-Free Domains for Components</li><li>Avoid Filters</li><li>Do Not Scale Images in HTML</li><li>Make favicon.ico Small and Cacheable</li></ol><h3 id="HTTP-Cathe"><a href="#HTTP-Cathe" class="headerlink" title="HTTP Cathe"></a>HTTP Cathe</h3><p>Expires</p><p>Cache-control</p><p>Last-Modified + Etag</p><p>Vary<br><a href="http://www.cnblogs.com/vajoy/p/5341664.html" target="_blank" rel="noopener">http://www.cnblogs.com/vajoy/p/5341664.html</a></p><p>原文：</p><ul><li>http缓存 <a href="http://www.cnblogs.com/vajoy/p/5341664.html" target="_blank" rel="noopener">http://www.cnblogs.com/vajoy/p/5341664.html</a></li><li>yslow <a href="http://yslow.org/" target="_blank" rel="noopener">http://yslow.org/</a></li></ul>]]></content>
+      <title>ES6之扩展运算符与应用</title>
+      <link href="/2018/07/20/ES6%E4%B9%8B%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%8E%E5%BA%94%E7%94%A8/"/>
+      <url>/2018/07/20/ES6%E4%B9%8B%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%8E%E5%BA%94%E7%94%A8/</url>
+      <content type="html"><![CDATA[<p>在使用react的过程中，会有如下写法<br><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">const</span> <span class="class"><span class="keyword">data</span>=&#123;<span class="title">name</span>:"<span class="title">ssdfin</span>"，<span class="title">value</span>:1&#125;</span></span><br><span class="line"><span class="title">const</span> component = &lt;<span class="type">Component</span> &#123;...<span class="class"><span class="keyword">data</span>&#125;&gt;</span></span><br></pre></td></tr></table></figure></p><p>发现对 … 三个点理解不是很深，所以单独记录下 ES6 rest/spread 特性</p><h3 id="扩展运算符-spread"><a href="#扩展运算符-spread" class="headerlink" title="扩展运算符(spread)"></a>扩展运算符(spread)</h3><ol><li>场景1：使用在数组之前。<br>作用：将一个数组转为用逗号分隔的参数序列</li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x, y, z</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(x, y, z)</span><br><span class="line">&#125;</span><br><span class="line">foo.apply(<span class="literal">null</span>, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])　　<span class="comment">//在ES6之前我们这样使用数组作为函数参数调用。</span></span><br><span class="line">foo(...[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])　　<span class="comment">//此处...[1, 2, 3]就被展开为用逗号隔开的1, 2, 3参数序列</span></span><br></pre></td></tr></table></figure><p>　当运算符”…”用在数组之前时，数组会被转为用逗号分隔的参数序列。</p><ol start="2"><li>场景2：替代apply()方法</li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES5的 写法</span></span><br><span class="line"><span class="keyword">var</span> arr1 = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="keyword">var</span> arr2 = [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="built_in">Array</span>.prototype.push.apply(arr1, arr2);　　<span class="comment">//push方法参数不能为数组，ES5需要借助apply()方法实现。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6 的写法</span></span><br><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="keyword">let</span> arr2 = [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line">arr1.push(...arr2);　　　　　　　　　　　　　　<span class="comment">//ES6中借助扩展运算符直接将数组转为了参数序列。</span></span><br></pre></td></tr></table></figure><ol start="3"><li>场景3：替代数组的concat()方法</li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"><span class="keyword">let</span> b = [<span class="number">1</span>, ...a, <span class="number">5</span>]    <span class="comment">//此处a数组被展开为2, 3, 4</span></span><br><span class="line"><span class="built_in">console</span>.log(b)          <span class="comment">//结果为[1, 2, 3, 4, 5]</span></span><br></pre></td></tr></table></figure><p>上面的用法基本上替代了concat(..)，这里的行为就像[1].concat(a, [5])</p><p>注意：扩展运算符后如果是空数组，不会产生任何效果</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[...[], <span class="number">1</span>]</span><br><span class="line"><span class="comment">// [1]</span></span><br></pre></td></tr></table></figure><h3 id="收集运算符-rest"><a href="#收集运算符-rest" class="headerlink" title="收集运算符(rest)"></a>收集运算符(rest)</h3><p>作用：收集剩余的参数转为一个数组。</p><p>　　场景：在函数参数之前使用。</p><ol><li><p>场景1：函数参数之前</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">x, y, ...z</span>)</span>&#123;   <span class="comment">//z表示把剩余的参数收集到一起组成一个名叫z的数组。</span></span><br><span class="line">    <span class="built_in">console</span>.log(x, y, z)</span><br><span class="line">&#125;</span><br><span class="line">foo(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)          <span class="comment">//x赋值1，y赋值2，z中赋值[3, 4, 5]数组</span></span><br></pre></td></tr></table></figure></li><li><p>场景2：结构赋值</p></li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [first, ...rest] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];　　<span class="comment">//此处'...'作为rest收集运算符使用</span></span><br><span class="line">first <span class="comment">// 1</span></span><br><span class="line">rest  <span class="comment">// [2, 3, 4, 5]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> [first, ...rest] = [];</span><br><span class="line">first <span class="comment">// undefined</span></span><br><span class="line">rest  <span class="comment">// []</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> [first, ...rest] = [<span class="string">"foo"</span>];</span><br><span class="line">first  <span class="comment">// "foo"</span></span><br><span class="line">rest   <span class="comment">// []</span></span><br></pre></td></tr></table></figure><h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>如何判断ES6中的运算符是扩展运算符(spread)还是收集运算符(rest)，主要取决于其作用的位置。</p><p>1.数组之前，作为扩展运算符使用，将数组转为逗号分隔的参数序列。</p><p>2.函数形参中，收集传入的参数为数组。</p><p>3.解构赋值中，收集对应的数据为数组。</p><p>原文：</p><ol><li><a href="https://www.jianshu.com/p/41f499fa0e7b" target="_blank" rel="noopener">ES6之扩展运算符与应用(数组篇)</a></li><li><a href="https://www.jianshu.com/p/35f9efe95fff" target="_blank" rel="noopener">ES6之扩展运算符与应用(对象篇)</a></li><li><a href="https://www.cnblogs.com/diweikang/p/8976854.html" target="_blank" rel="noopener">https://www.cnblogs.com/diweikang/p/8976854.html</a></li></ol>]]></content>
       
       <categories>
           
-          <category> 性能优化 </category>
+          <category> 前端基础 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 性能 </tag>
+            <tag> ES6 </tag>
             
         </tags>
       
@@ -184,27 +205,6 @@
         <tags>
             
             <tag> React </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>ES6之扩展运算符与应用</title>
-      <link href="/2018/07/05/ES6%E4%B9%8B%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%8E%E5%BA%94%E7%94%A8/"/>
-      <url>/2018/07/05/ES6%E4%B9%8B%E6%89%A9%E5%B1%95%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%8E%E5%BA%94%E7%94%A8/</url>
-      <content type="html"><![CDATA[<p>原文：</p><ol><li><a href="https://www.jianshu.com/p/41f499fa0e7b" target="_blank" rel="noopener">ES6之扩展运算符与应用(数组篇)</a></li><li><a href="https://www.jianshu.com/p/35f9efe95fff" target="_blank" rel="noopener">ES6之扩展运算符与应用(对象篇)</a></li></ol>]]></content>
-      
-      <categories>
-          
-          <category> 前端基础 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> ES6 </tag>
             
         </tags>
       
@@ -482,9 +482,9 @@
       
         <tags>
             
-            <tag> React </tag>
-            
             <tag> Javascript </tag>
+            
+            <tag> React </tag>
             
         </tags>
       
@@ -695,6 +695,21 @@
     </entry>
     
     <entry>
+      <title>node版本切换工具的常用命令</title>
+      <link href="/2018/05/05/node%E7%89%88%E6%9C%AC%E5%88%87%E6%8D%A2%E5%B7%A5%E5%85%B7nvm%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
+      <url>/2018/05/05/node%E7%89%88%E6%9C%AC%E5%88%87%E6%8D%A2%E5%B7%A5%E5%85%B7nvm%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+      <content type="html"><![CDATA[<p>使用场景：同时处理几个项目时，依赖的node版本不同，使用nvm工具，可以实现快速切换。</p><ul><li>nvm install <version>  ## 安装指定版本，可模糊安装，如：安装v4.4.0，既可nvm install v4.4.0，又可nvm install 4.4</version></li><li>nvm uninstall <version>  ## 删除已安装的指定版本，语法与install类似</version></li><li>nvm use <version>  ## 切换使用指定的版本node</version></li><li>nvm ls  ## 列出所有安装的版本</li><li>nvm ls-remote  ## 列出所以远程服务器的版本（官方node version list）</li><li>nvm current  ## 显示当前的版本</li><li>nvm alias <name> <version>  ## 给不同的版本号添加别名</version></name></li><li>nvm unalias <name>  ## 删除已定义的别名</name></li><li>nvm reinstall-packages <version>  ## 在当前版本node环境下，重新全局安装指定版本号的npm包</version></li></ul>]]></content>
+      
+      <categories>
+          
+          <category> 效率工具 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    <entry>
       <title>less配合vscode使用的配置</title>
       <link href="/2018/05/05/less%E9%85%8D%E5%90%88vscode%E4%BD%BF%E7%94%A8%E7%9A%84%E9%85%8D%E7%BD%AE/"/>
       <url>/2018/05/05/less%E9%85%8D%E5%90%88vscode%E4%BD%BF%E7%94%A8%E7%9A%84%E9%85%8D%E7%BD%AE/</url>
@@ -714,21 +729,6 @@
             <tag> vscode </tag>
             
         </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>node版本切换工具的常用命令</title>
-      <link href="/2018/05/05/node%E7%89%88%E6%9C%AC%E5%88%87%E6%8D%A2%E5%B7%A5%E5%85%B7nvm%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-      <url>/2018/05/05/node%E7%89%88%E6%9C%AC%E5%88%87%E6%8D%A2%E5%B7%A5%E5%85%B7nvm%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-      <content type="html"><![CDATA[<p>使用场景：同时处理几个项目时，依赖的node版本不同，使用nvm工具，可以实现快速切换。</p><ul><li>nvm install <version>  ## 安装指定版本，可模糊安装，如：安装v4.4.0，既可nvm install v4.4.0，又可nvm install 4.4</version></li><li>nvm uninstall <version>  ## 删除已安装的指定版本，语法与install类似</version></li><li>nvm use <version>  ## 切换使用指定的版本node</version></li><li>nvm ls  ## 列出所有安装的版本</li><li>nvm ls-remote  ## 列出所以远程服务器的版本（官方node version list）</li><li>nvm current  ## 显示当前的版本</li><li>nvm alias <name> <version>  ## 给不同的版本号添加别名</version></name></li><li>nvm unalias <name>  ## 删除已定义的别名</name></li><li>nvm reinstall-packages <version>  ## 在当前版本node环境下，重新全局安装指定版本号的npm包</version></li></ul>]]></content>
-      
-      <categories>
-          
-          <category> 效率工具 </category>
-          
-      </categories>
-      
       
     </entry>
     
