@@ -15,9 +15,10 @@ CDN内容分布网络（ContentDelivery Network）是构筑在现有的Internet�
 - 其目的是在现有的Internet上增加一层新的网络架构，将网站的内容发布到最接近用户的服务器，使用户可以就近取得所需的内容，提高用户访问网站的响应速度。
 
 - 一个CND架构 = 镜像（Mirror）+ 缓存（Cache）+整体负载均衡（GSLB）
-
+<!--more-->
 
 ### 请求CDN上的资源的过程
+![](https://raw.githubusercontent.com/shengyur/Images/master/cdn.jpg)
 
 1. 用户向浏览器输入 www.xxxx.com 这个域名，浏览器第一次发现本地没有dns缓存，则向网站的DNS服务器请求；
 
@@ -47,7 +48,7 @@ CDN的管理系统是整个系统能够正常运转的保证。它不仅能对�
 **理论上，最简单的CDN网络有一个负责全局负载均衡的DNS和各节点一台Cache，即可运行。DNS支持根据用户源IP地址解析不同的IP，实现 就近访问。为了保证高可用性等，需要监视各节点的流量、健康状况等。一个节点的单台Cache承载数量不够时，才需要多台Cache，多台Cache同时 工作，才需要负载均衡器，使Cache群协同工作。**
 
 
-### cdn网络加速常见问题解答：
+### cdn网络加速常见问题解答
 
 1. cdn网络加速比较适合那些类型的网站？
 

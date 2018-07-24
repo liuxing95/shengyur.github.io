@@ -90,7 +90,7 @@ theme: maupassant
 deploy:
   type: git
   repo: https://github.com/shengyur/shengyur.github.io.git
-  branch: master
+  branch: sourceCode
 
 search:
   path: search.xml
