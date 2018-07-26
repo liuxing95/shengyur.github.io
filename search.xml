@@ -24,6 +24,27 @@
     </entry>
     
     <entry>
+      <title>curl命令是怎么使用的？</title>
+      <link href="/2018/07/21/curl%E5%91%BD%E4%BB%A4%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8%E7%9A%84%EF%BC%9F/"/>
+      <url>/2018/07/21/curl%E5%91%BD%E4%BB%A4%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8%E7%9A%84%EF%BC%9F/</url>
+      <content type="html"><![CDATA[<p>在了解http请求的过程中，发现除了可以通过chrome控制台调试工具，也可以直接在mac(内置Linux)命令行中，使用curl命令,经了解</p><p>curl命令是一个利用URL规则在命令行下工作的文件传输工具。它支持文件的上传和下载，所以是 综合传输工具 ，但按传统，习惯称curl为下载工具。作为一款强力工具，curl支持包括HTTP、HTTPS、ftp等众多协议，还支持POST、cookies、认证、从指定偏移处下载部分文件、用户代理字符串、限速、文件大小、进度条等特征。做网页处理流程和数据检索自动化，curl可以祝一臂之力。</p><p>语法：</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">curl</span><span class="params">(选项)</span><span class="params">(参数)</span></span></span><br></pre></td></tr></table></figure><p>功能强大，不过目前比较常用的是 只打印响应头部信息 的功能，<strong>通过-I或者-head可以只打印出HTTP头部信息</strong>,来快速分析常见的http请求头</p><p><img src="https://raw.githubusercontent.com/shengyur/Images/master/curl.jpg" alt="curl --head xxx"></p><p>原文：<br><a href="http://man.linuxde.net/curl" target="_blank" rel="noopener">curl命令们</a><br><a href="https://curl.haxx.se/docs/manpage.html" target="_blank" rel="noopener">curl文档</a></p>]]></content>
+      
+      <categories>
+          
+          <category> 十万个为什么 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> HTTP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>CDN工作机制以及原理浅析</title>
       <link href="/2018/07/21/CDN%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6%E4%BB%A5%E5%8F%8A%E5%8E%9F%E7%90%86%E6%B5%85%E6%9E%90/"/>
       <url>/2018/07/21/CDN%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6%E4%BB%A5%E5%8F%8A%E5%8E%9F%E7%90%86%E6%B5%85%E6%9E%90/</url>
@@ -41,27 +62,6 @@
             <tag> 性能 </tag>
             
             <tag> CDN </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>curl命令是怎么使用的？</title>
-      <link href="/2018/07/21/curl%E5%91%BD%E4%BB%A4%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8%E7%9A%84%EF%BC%9F/"/>
-      <url>/2018/07/21/curl%E5%91%BD%E4%BB%A4%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8%E7%9A%84%EF%BC%9F/</url>
-      <content type="html"><![CDATA[<p>在了解http请求的过程中，发现除了可以通过chrome控制台调试工具，也可以直接在mac(内置Linux)命令行中，使用curl命令,经了解</p><p>curl命令是一个利用URL规则在命令行下工作的文件传输工具。它支持文件的上传和下载，所以是 综合传输工具 ，但按传统，习惯称curl为下载工具。作为一款强力工具，curl支持包括HTTP、HTTPS、ftp等众多协议，还支持POST、cookies、认证、从指定偏移处下载部分文件、用户代理字符串、限速、文件大小、进度条等特征。做网页处理流程和数据检索自动化，curl可以祝一臂之力。</p><p>语法：</p><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">curl</span><span class="params">(选项)</span><span class="params">(参数)</span></span></span><br></pre></td></tr></table></figure><p>功能强大，不过目前比较常用的是 只打印响应头部信息 的功能，<strong>通过-I或者-head可以只打印出HTTP头部信息</strong>,来快速分析常见的http请求头</p><p><img src="https://raw.githubusercontent.com/shengyur/Images/master/curl.jpg" alt="curl --head xxx"></p><p>原文：<br><a href="http://man.linuxde.net/curl" target="_blank" rel="noopener">curl命令们</a><br><a href="https://curl.haxx.se/docs/manpage.html" target="_blank" rel="noopener">curl文档</a></p>]]></content>
-      
-      <categories>
-          
-          <category> 十万个为什么 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> HTTP </tag>
             
         </tags>
       
