@@ -12,23 +12,14 @@ tags:
 
 最近一周github总是提交不上去，并且打开github页面非常卡，一git push就报错，百度一堆答案众说纷纭，气愤的很，难不成是我南京进梅雨季节了网速不好么  谜团在今晚终于解开了 ==
 
+
 报错1：
 
 ```Linux
-Could not resolve host: github.com
+fatal: unable to access 'https://github.com/shengyur/shengyur.github.io.git/': Could not resolve host: github.com
 ```
-
-报错原因：
-
-域名解析不了，推测是网络问题
 
 报错2：
-
-```Linux
-fatal: The remote end hung up unexpectedly
-```
-
-报错3：
 
 ```Linux
  rewrite categories/Questions/index.html (80%)
@@ -37,6 +28,22 @@ fatal: The remote end hung up unexpectedly
  rewrite tags/git/index.html (78%)
 ```
 push 时，进度疯狂卡住，太焦躁了
+
+```Linux
+fatal: unable to access 'https://github.com/shengyur/shengyur.github.io.git/': Server aborted the SSL handshake
+```
+
+报错3：
+
+```Linux
+Could not resolve host: github.com
+```
+
+报错原因：
+
+域名解析不了，推测是网络问题,检查设备，发现vpn和翻墙工具都开好了，难不成是网速问题。。。
+
+然后把电脑连上手机热点，三个报错就都不见了 == ，吐槽下南京电信，真是辣鸡
 
 
 
