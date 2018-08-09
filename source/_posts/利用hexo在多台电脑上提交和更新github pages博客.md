@@ -23,9 +23,9 @@ Hexo部署到GitHub上的文件，是本地的.md文件编译生成的html文件
 
 1 . 创建仓库，shengyur.github.io；
 
-2 . 创建两个分支：master 与 hexo；
+2 . 创建两个分支：master 与 sourceCode;
 
-3 . 设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件）；
+3 . 设置sourceCode为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件）；
 
 4 . 使用git clone xxx.github.io.git拷贝仓库；
 
@@ -33,11 +33,30 @@ Hexo部署到GitHub上的文件，是本地的.md文件编译生成的html文件
 
 6 . 修改_config.yml中的deploy参数，分支应为master；
 
-7 . 依次执行git add .、git commit -m “…”、git push origin hexo提交网站相关的文件；
+7 . 依次执行git add .、git commit -m “…”、git push origin sourceCode提交网站相关的文件；
+如果出现报错
+```
+! [rejected]          sourceCode -> sourceCode (non-fast-forward)
+```
+解决办法：
+
+1、用Merge合并
+
+      命令行下，可以使用以下命令：
+
+      git fetch
+
+      git merge
+
+2、强推
+
+      git push -f
+
+      即利用强覆盖方式用你本地的代码替代git仓库内的内容。
 
 8 . 执行hexo generate -d生成网站并部署到GitHub上。
 
-这样一来，在GitHub上的xxx.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。多端登陆修改博客就可以实现了~
+这样一来，在GitHub上的xxx.github.io仓库就有两个分支，一个sourceCode分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。多端登陆修改博客就可以实现了~
 
 
 参考：
