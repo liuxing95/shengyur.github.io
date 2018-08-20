@@ -7,6 +7,9 @@ tags:
 ---
 
 ![](http://7xqdjc.com1.z0.glb.clouddn.com/blog_c2a91a3b4a43d03bf967dda7c7425506.png)
+
+
+
 <!--more-->
 ### 安装Node.js
     用来生成静态页面。移步Node.js官网
