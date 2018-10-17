@@ -10,3 +10,5 @@
   - 页面呈现六部曲
   - 页面渲染性能检测常用方法
   - 常用页面优化手段
+
+- [Webpack4 前端工程化配置记录](https://github.com/shengyur/webpack-demo)
