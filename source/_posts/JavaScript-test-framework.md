@@ -121,7 +121,7 @@ describe('test testObject', () => {
 
 ### Mocha
 Mocha允许你使用任意你喜欢的断言库，在上面的例子中，我们使用了Node.js内置的assert模块作为断言
-让我们一起看看assert有哪些常见用法：
+让我们一起看看assert有哪些常见用法
 
 
 
