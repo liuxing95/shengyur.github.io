@@ -12,7 +12,6 @@
   - 页面渲染性能检测常用方法
   - 常用页面优化手段
 
-
 - [谈谈Event Loop中(Job queue)任务队列的执行顺序](https://github.com/forthealllight/blog/issues/5)
 
 ### 构建工具
